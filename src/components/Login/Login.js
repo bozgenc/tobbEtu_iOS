@@ -7,10 +7,10 @@ export default class Login extends Component {
         return (
             <View style = {styles.container}>
                 <View style = {styles.header}>
-                    <Text style = {styles.text}>
+                    {/*<Text style = {styles.text}>
                         Hoşgeldin
-                    </Text>
-                    <View style = {{justifyContent: 'center', alignItems: 'center', marginLeft: 20, marginTop: 230}}>
+                    </Text>*/}
+                    <View style = {{justifyContent: 'center', alignItems: 'center', marginTop: 370}}>
                         <Image source={require("../images/loginuser.png")} style = {styles.image}/>
                     </View>
                     <View style = {{alignItems: 'center', justifyContent: 'center'}}>
@@ -27,17 +27,17 @@ export default class Login extends Component {
                             onPress = {() => {this.props.navigation.navigate('Program')}}
                         >
                             <Text style = {{
-                                fontSize: 14,
+                                fontSize: 17,
                                 color: 'white',
                                 textAlign: 'center',
-                                paddingTop: 8,
+                                paddingTop: 0,
                                 fontWeight: 'bold',
                             }}>
                                 giriş
                             </Text>
                         </TouchableOpacity>
                     </View>
-                    <View style = {{justifyContent: 'center', alignItems: 'center', marginTop: 210}}>
+                    <View style = {{justifyContent: 'center', alignItems: 'center', marginTop: 210,}}>
                         <Image source={require("../images/tobblogo.png")} style = {styles.image}/>
                     </View>
                 </View>
@@ -77,19 +77,19 @@ const styles = StyleSheet.create({
         height: 35,
         marginTop: 20,
         marginLeft: 20,
-        width: "50%"
+        width: "70%"
     },
     button: {
         alignItems: 'center',
         justifyContent: 'center',
-        width: "50%",
+        width: "70%",
         borderWidth: 1,
         borderColor: '#383838',
         borderRadius: 10,
         height: 35,
         backgroundColor: '#007AFF',
         marginTop: 8,
-        marginLeft: 113,
+        marginLeft: 73,
     },
     image: {
         width: 100,

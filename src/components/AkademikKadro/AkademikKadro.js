@@ -13,7 +13,7 @@ export default class AkademikKadro extends Component {
                                 onPress={() => this.props.navigation.openDrawer()}
                                 style={{color: "black" }}
                             >
-                                <Text style = {{marginLeft: 10, fontSize: 30}}>
+                                <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
                                     ≡
                                 </Text>
                             </TouchableOpacity>
