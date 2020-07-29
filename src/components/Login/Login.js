@@ -3,16 +3,29 @@ import {StyleSheet, Text, View, ScrollView, TextInput, Button, TouchableOpacity,
 import Program from "../Program/Program";
 
 export default class Login extends Component {
+    constructor() {
+        super();
+        this.state = {
+            ogrenciNo: "",
+        }
+    }
+
+    onSubmit = () => {
+        if(this.state.ogrenciNo.length != 9 || this.state.ogrenciNo.includes(",") || this.state.ogrenciNo.includes("."))
+            console.log("a");
+        else {
+            this.props.navigation.navigate('Program')
+        }
+    }
+
     render() {
         return (
             <View style = {styles.container}>
                 <View style = {styles.header}>
-                    {/*<Text style = {styles.text}>
-                        Hoşgeldin
-                    </Text>*/}
                     <View style = {{justifyContent: 'center', alignItems: 'center', marginTop: 370}}>
                         <Image source={require("../images/loginuser.png")} style = {styles.image}/>
                     </View>
+
                     <View style = {{alignItems: 'center', justifyContent: 'center'}}>
                         <TextInput
                             style={styles.input}
@@ -20,11 +33,13 @@ export default class Login extends Component {
                             textAlign='center'
                             keyboardType = "numeric"
                             maxLength={9}
+                            autoCorrect={false}
+                            onChangeText={(text) => {this.setState({ogrenciNo: text})}}
                         />
                     </View>
                     <View style = {styles.button}>
                         <TouchableOpacity
-                            onPress = {() => {this.props.navigation.navigate('Program')}}
+                            onPress = {() => this.onSubmit}
                         >
                             <Text style = {{
                                 fontSize: 17,
@@ -37,6 +52,7 @@ export default class Login extends Component {
                             </Text>
                         </TouchableOpacity>
                     </View>
+
                     <View style = {{justifyContent: 'center', alignItems: 'center', marginTop: 210,}}>
                         <Image source={require("../images/tobblogo.png")} style = {styles.image}/>
                     </View>
