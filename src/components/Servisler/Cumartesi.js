@@ -4,7 +4,7 @@ import {Header, Left, Right} from "native-base";
 
 var screen = Dimensions.get("window");
 
-export default class Servisler extends Component {
+export default class Cumartesi extends Component {
     constructor() {
         super();
         this.state = {
@@ -13,20 +13,23 @@ export default class Servisler extends Component {
     }
 
     componentDidMount() {
-        const semt = [];
-        semt.push({name: "100.YIL, ÇİĞDEM MAH."});semt.push({name:"ABİDİNPAŞA"});semt.push({name:"BAĞLICA"});semt.push({name:"BALGAT YURTKUR M. KÜTÜPHANE"});
-        semt.push({name: "BATIKENT ATLANTİS"});semt.push({name: "BATIKENT ÇAKIRLAR"});semt.push({name: "BATIKENT İLK YERLEŞİM"});semt.push({name: "BATIKENT MESA"});
-        semt.push({name: "BEYSUKENT ANGORA"});semt.push({name: "BİLKENT M. KEMAL"});semt.push({name: "BİRLİK MAH."});semt.push({name: "CEVİZLİDERE"});
-        semt.push({name: "DEMETEVLER"});semt.push({name: "DİKİMEVİ, SIHHİYE"});semt.push({name: "DİKMEN"});semt.push({name: "DİKMEN ÖVEÇLER"});
-        semt.push({name: "DİKMEN SİNAN CAD."});semt.push({name: "DİKMEN SOKULLU"});semt.push({name: "ELVANKENT ETİMESGUT"});semt.push({name: "ERYAMAN 1,2"});
-        semt.push({name: "ERYAMAN 3,4,5"});semt.push({name: "ERYAMAN ŞEKER MAH."});semt.push({name: "ESAT DÖRTYOL"});semt.push({name: "ESAT SEYRAN"});semt.push({name: "ETLİK A. EĞLENCE"});
-        semt.push({name: "ETLİK AYVALI"});semt.push({name: "GÖLBAŞI"});semt.push({name: "HOŞDERE"});semt.push({name: "KIRKKONAKLAR"});semt.push({name: "K.ÖREN, S.EVLER"});
-        semt.push({name: "KAYAŞ-ANKAMALL"});semt.push({name: "KEÇİÖREN AKTEPE"});
-        semt.push({name: "KEÇİÖREN ASFALT"});semt.push({name: "KEÇİÖREN SANATORYUM"});semt.push({name: "KIZILAY"});semt.push({name: "ORAN İLKER"});
-        semt.push({name: "ORAN YILDIZ"});semt.push({name: "SERHAT"});semt.push({name: "SİNCAN"});semt.push({name: "ÜMİTKÖY"});semt.push({name: "YAPRACIK,YAŞAMKENT"});
-        semt.push({name: "YENİMAHALLE"});semt.push({name: "BAHÇELİEVLER"});
+        const saturday = [];
+        saturday.push({name: "08.00\nKIZILAY,BAHÇELİEVLER  ➔  TOBB ETÜ"});
+        saturday.push({name: "09.00\nBAHÇELİEVLER  ➔  TOBB ETÜ"});
+        saturday.push({name: "09.50\nKIZILAY,BAHÇELİEVLER  ➔  TOBB ETÜ"});
+        saturday.push({name: "10.45\nTOBB ETÜ  ➔  BAHÇELİEVLER"});
+        saturday.push({name: "11.00\nBAHÇELİEVLER  ➔  TOBB ETÜ"});
+        saturday.push({name: "12.00\nBAHÇELİEVLER  ➔  TOBB ETÜ"});
+        saturday.push({name: "12.30\nTOBB ETÜ  ➔  BAHÇELİEVLER"});
+        saturday.push({name: "13.45\nTOBB ETÜ  ➔  BAHÇELİEVLER"});
+        saturday.push({name: "14.00\nBAHÇELİEVLER  ➔  TOBB ETÜ"});
+        saturday.push({name: "14.30\nTOBB ETÜ  ➔  BAHÇELİEVLER"});
+        saturday.push({name: "15.30\nTOBB ETÜ  ➔  BAHÇELİEVLER"});
+        saturday.push({name: "16.30\nTOBB ETÜ  ➔  BAHÇELİEVLER, KIZILAY"});
+        saturday.push({name: "17.30\nTOBB ETÜ  ➔  BAHÇELİEVLER"});
+        saturday.push({name: "18.40\nTOBB ETÜ  ➔  BAHÇELİEVLER"});
 
-        this.setState({dataArray: semt})
+        this.setState({dataArray: saturday})
     }
 
     render() {
@@ -76,16 +79,17 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 8,
         backgroundColor: '#efebeb',
-        borderWidth: 0.1,
+        borderWidth: 0.2,
         borderColor: '#B00D23',
         borderRadius: 5,
         height: 50,
-        width: screen.width * 96.6 / 100 ,
+        width: screen.width * 96.6 / 100,
     },
     textStyle: {
         marginTop: 5,
         paddingVertical: 5,
         marginLeft: 2,
+        fontSize: 12,
         fontFamily: 'HelveticaNeue-Medium'
     }
 });

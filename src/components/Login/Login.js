@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, ScrollView, TextInput, Button, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, TextInput, Button, TouchableOpacity, Image, Alert} from 'react-native';
 import Program from "../Program/Program";
+import Snackbar from 'react-native-snackbar';
+
+var bool = false;
+var no = "";
 
 export default class Login extends Component {
     constructor() {
@@ -11,11 +15,29 @@ export default class Login extends Component {
     }
 
     onSubmit = () => {
-        if(this.state.ogrenciNo.length != 9 || this.state.ogrenciNo.includes(",") || this.state.ogrenciNo.includes("."))
-            console.log("a");
+        if(bool)
+            this.props.navigation.navigate('Program');
         else {
-            this.props.navigation.navigate('Program')
+            Alert.alert(
+                "hata ",
+                "lütfen geçerli bir öğrenci numarası girin!",
+                [
+                    { text: "OK", onPress: () => console.log("OK Pressed")}
+                ],
+                { cancelable: false }
+            );
         }
+    }
+
+    static passOgrenciNoAux(text) {
+        if(text.length == 9 && !text.includes(",") && !text.includes("."))  {
+            bool = true;
+            no = text;
+        }
+    }
+
+    static passOgrenciNo() {
+        return no;
     }
 
     render() {
@@ -31,15 +53,16 @@ export default class Login extends Component {
                             style={styles.input}
                             placeholder="öğrenci numarası"
                             textAlign='center'
-                            keyboardType = "numeric"
+                            keyboardType = "number-pad"
                             maxLength={9}
                             autoCorrect={false}
-                            onChangeText={(text) => {this.setState({ogrenciNo: text})}}
+                            returnKeyType={'done'}
+                            onChangeText={(text) => Login.passOgrenciNoAux(text)}
                         />
                     </View>
                     <View style = {styles.button}>
                         <TouchableOpacity
-                            onPress = {() => this.onSubmit}
+                            onPress = {() => this.onSubmit()}
                         >
                             <Text style = {{
                                 fontSize: 17,

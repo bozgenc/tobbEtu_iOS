@@ -12,12 +12,12 @@ import Finaller from "../VizeFinaller/Finaller";
 import AkademikKadro from "../AkademikKadro/AkademikKadro";
 import BosDerslikler from "../BosDerslikler/BosDerslikler";
 import Derslerim from "../Derslerim/Derslerim";
+import Ringler from "../Servisler/Ringler";
+import Cumartesi from "../Servisler/Cumartesi";
 
 import {createStackNavigator} from "@react-navigation/stack";
 import {createDrawerNavigator} from "@react-navigation/drawer";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
-
 
 const Stack = createStackNavigator();
 const Drawer =  createDrawerNavigator();
@@ -26,13 +26,31 @@ const Tab = createMaterialTopTabNavigator();
 function MyTabs() {
     return (
         <Tab.Navigator
+            lazy = {true}
             tabBarPosition='bottom'
             tabBarOptions={{
                 style: {marginBottom: -4, height: 60}
             }}
         >
-            <Tab.Screen name="Program" component={Program} />
+            <Tab.Screen name="Program" component={Program} initialParams={{ ogrenciNo: Login.passOgrenciNo()}}/>
             <Tab.Screen name="Derslerim" component={Derslerim} />
+        </Tab.Navigator>
+    );
+}
+
+function ServislerTab() {
+    return (
+        <Tab.Navigator
+            lazy = {true}
+            tabBarPosition='bottom'
+            tabBarOptions={{
+                style: {marginBottom: -4, height: 60,}
+
+            }}
+        >
+            <Tab.Screen name="semt" component={Servisler} />
+            <Tab.Screen name="ringler" component={Ringler} />
+            <Tab.Screen name="cumartesi" component={Cumartesi} />
         </Tab.Navigator>
     );
 }
@@ -40,8 +58,10 @@ function MyTabs() {
 function Home() {
     return (
         <Drawer.Navigator
+            lazy = {true}
             drawerContentOptions={{
                 inactiveTintColor: 'black',
+                activeTintColor: '#d0c6c6'
             }}
         >
             <Drawer.Screen name="program" component={MyTabs}/>
@@ -49,7 +69,7 @@ function Home() {
             <Drawer.Screen name="dersler" component={Dersler} />
             <Drawer.Screen name="boş derslikler" component={BosDerslikler} />
             <Drawer.Screen name="akademik kadro" component={AkademikKadro} />
-            <Drawer.Screen name="servisler" component={Servisler} />
+            <Drawer.Screen name="servisler" component={ServislerTab} />
             <Drawer.Screen name="vizeler" component={Vizeler} />
             <Drawer.Screen name="finaller" component={Finaller} />
         </Drawer.Navigator>
