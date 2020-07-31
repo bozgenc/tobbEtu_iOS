@@ -14,7 +14,7 @@ class TumBilgiler extends Component{
 
     createOgrenciListesi(id) {
         const ogrenciData = {
-            ad_soyad: "Arda Ege İsker",
+            ad_soyad: "Arda Ege Isker",
             no: "171101072",
             bolum: "Bilgisayar Mühendisliği",
             sinif: 2,
@@ -86,7 +86,7 @@ class TumBilgiler extends Component{
         temp.push(ogrenciData2);
         temp.push(ogrenciData3);
 
-        let dataToReturn = {};
+        let dataToReturn = null;
         var i;
         for(i = 0; i < temp.length; i++){
             if(temp[i].no === id){
