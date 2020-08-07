@@ -1,0 +1,1136 @@
+{
+  "ogrenciler": [
+    {
+      "sinif": 2,
+      "ad_soyad": "Arda Ege İsker",
+      "no": "171101072",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 2,
+      "ad_soyad": "Rana Gül Serpil",
+      "no": "181801029",
+      "aldigiDersler": [
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        }
+      ],
+      "bolum": "Nanoteknoloji Mühendisliği"
+    },
+    {
+      "sinif": 4,
+      "ad_soyad": "Barış Mamur",
+      "no": "171201065",
+      "aldigiDersler": [
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Elektrik ve Elektronik Mühendisliği"
+    },
+    {
+      "sinif": 1,
+      "ad_soyad": "Ege Kızıltan",
+      "no": "171101057",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 2,
+      "ad_soyad": "Mehmet Mutlu",
+      "no": "174601031",
+      "aldigiDersler": [
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        }
+      ],
+      "bolum": "Mimarlık Lisans Programı"
+    },
+    {
+      "sinif": 4,
+      "ad_soyad": "Ahmet Yaynık",
+      "no": "171501017",
+      "aldigiDersler": [
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        },
+        {
+          "ad": "Putluğa giriş",
+          "hangi_sube": 1,
+          "dersKodu": "PUT 101",
+          "hoca_adi": "OSCAR ISAAC",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Makine Mühendisliği Lisans Programı"
+    },
+    {
+      "sinif": 2,
+      "ad_soyad": "Alper Bahçekapılı",
+      "no": "191101005",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 2,
+      "ad_soyad": "Aydın Mercan",
+      "no": "191101052",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Putluğa giriş",
+          "hangi_sube": 1,
+          "dersKodu": "PUT 101",
+          "hoca_adi": "OSCAR ISAAC",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 2,
+      "ad_soyad": "Cenk Göktürk",
+      "no": "181103001",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 3,
+      "ad_soyad": "Adnan Ekici",
+      "no": "171101047",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 3,
+      "ad_soyad": "Haktan Çetin",
+      "no": "181101064",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 2,
+      "ad_soyad": "İremnur Çolak",
+      "no": "181101020",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 4,
+      "ad_soyad": "Mehmet Can Öz",
+      "no": "161201080",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 4,
+      "ad_soyad": "Serdar Sayın",
+      "no": "152401028",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        },
+        {
+          "ad": "Putluğa giriş",
+          "hangi_sube": 1,
+          "dersKodu": "PUT 101",
+          "hoca_adi": "OSCAR ISAAC",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 2,
+      "ad_soyad": "Şule Gülen Keçeli",
+      "no": "191104090",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        },
+        {
+          "ad": "Putluğa giriş",
+          "hangi_sube": 1,
+          "dersKodu": "PUT 101",
+          "hoca_adi": "OSCAR ISAAC",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 2,
+      "ad_soyad": "Batuhan Şen",
+      "no": "131101033",
+      "aldigiDersler": [
+        {
+          "ad": "Veri Yapıları",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 212",
+          "hoca_adi": "MEHMET TAN",
+          "baslamaSaati": [
+            "Salı,13.30,2,177",
+            "Perşembe,9.30,2,176"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Pazartesi,16.30,2,176",
+            "Cumartesi,19.30,2,177"
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        },
+        {
+          "ad": "Mantıksal Devre Tasarımı Labaratuvarı",
+          "hangi_sube": 1,
+          "dersKodu": "BİL 264L",
+          "hoca_adi": "OĞUZ ERGİN",
+          "baslamaSaati": [
+            "Salı,18.30,2,X001"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "İngilizce Sunum Teknikleri",
+          "hangi_sube": 3,
+          "dersKodu": "İNG 004",
+          "hoca_adi": "BEZEN TUNCOK",
+          "baslamaSaati": [
+            "Çarşamba,10.30,2,311",
+            "Cumartesi,11.30,1,Y407"
+          ]
+        }
+      ],
+      "bolum": "Bilgisayar Mühendisliği"
+    },
+    {
+      "sinif": 4,
+      "ad_soyad": "Taner Tolga Tarlacı",
+      "no": "171101031",
+      "aldigiDersler": [
+        {
+          "ad": "Putluğa giriş",
+          "hangi_sube": 1,
+          "dersKodu": "PUT 101",
+          "hoca_adi": "OSCAR ISAAC",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        },
+        {
+          "ad": "Matematik II",
+          "hangi_sube": 1,
+          "dersKodu": "MAT 102",
+          "hoca_adi": "MELTEM GÖLGELİ",
+          "baslamaSaati": [
+            "Pazartesi,9.30,2,Amfi 2"
+          ]
+        },
+        {
+          "ad": "Tıbbi Biyoloji",
+          "hangi_sube": 1,
+          "dersKodu": "BMM 203",
+          "hoca_adi": "PARISA SHARAFI",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Ekonomiye Giriş",
+          "hangi_sube": 1,
+          "dersKodu": "IKT 105",
+          "hoca_adi": "ERAY CUMBUL",
+          "baslamaSaati": [
+            ""
+          ]
+        },
+        {
+          "ad": "Almanca II",
+          "hangi_sube": 3,
+          "dersKodu": "ALM 002",
+          "hoca_adi": "YASEMİN YÜCEL ÖZDEMİR",
+          "baslamaSaati": [
+            "Çarşamba,12.30,2,311",
+            "Cumartesi,12.30,2,Y407"
+          ]
+        }
+      ],
+      "bolum": "Kıbrıs Dili ve Edebiyatı"
+    }
+  ]
+}

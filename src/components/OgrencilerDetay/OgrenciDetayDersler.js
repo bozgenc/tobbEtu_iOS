@@ -1,40 +1,41 @@
 import React, { Component } from 'react';
-import {Alert, Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Header, Left, Right} from "native-base";
-import veriler from "../Veriler/TumBilgiler";
 
 var screen = Dimensions.get('window');
 
-export default class Dersler extends Component {
+export default class OgrenciDetayDersler extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dersler: [],
+            selectedKisi: props.route.params.selectedKisi,
+            dersler: props.route.params.selectedKisi.aldigiDersler,
         }
     }
 
     componentDidMount() {
-        const data = veriler.createDersListesi()
-        this.setState({dersler: data})
+        var today = new Date();
+        var day = today.getDay();
+        this.setState({gun: day})
     }
 
     render() {
         return (
-            <View style = {{flex: 1,}}>
+            <View style = {{flex: 1}}>
                 <View>
                     <Header style = {{backgroundColor: 'white'}} >
                         <Left>
                             <TouchableOpacity
-                                onPress={() => this.props.navigation.openDrawer()}
+                                onPress={() => this.props.navigation.navigate('Ogrenciler')}
                                 style={{color: "black" }}
                             >
                                 <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    ≡
+                                    ⭠
                                 </Text>
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>dersler</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>profil</Text>
 
                         <Right>
                         </Right>

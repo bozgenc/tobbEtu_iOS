@@ -33,7 +33,7 @@ export default class Program extends Component {
         var day = today.getDay();
         this.setState({gun: day})
 
-        const data = veriler.createOgrenciListesi(this.state.no)
+        const data = veriler.getOgrenciBilgisi(this.state.no)
         if(data == null) {
             Alert.alert(
                 "hata ",
