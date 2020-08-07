@@ -60,11 +60,11 @@ export default class Login extends Component {
                             onChangeText={(text) => Login.passOgrenciNoAux(text)}
                         />
                     </View>
-                    <View style = {styles.button}>
-                        <TouchableOpacity
-                            onPress = {() => this.onSubmit()}
-                        >
-                            <Text style = {{
+                    <TouchableOpacity
+                        onPress={() => this.onSubmit()}
+                    >
+                        <View style={styles.button}>
+                            <Text style={{
                                 fontSize: 17,
                                 color: 'white',
                                 textAlign: 'center',
@@ -73,8 +73,8 @@ export default class Login extends Component {
                             }}>
                                 giriş
                             </Text>
-                        </TouchableOpacity>
-                    </View>
+                        </View>
+                    </TouchableOpacity>
 
                     <View style = {{justifyContent: 'center', alignItems: 'center', marginTop: 210,}}>
                         <Image source={require("../images/tobblogo.png")} style = {styles.image}/>
