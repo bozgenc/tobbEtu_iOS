@@ -1,41 +1,60 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, TouchableOpacity, View, Dimensions} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Dimensions, Alert} from 'react-native';
 import {Header ,Left, Right } from "native-base";
-import veriler from "../Veriler/TümBilgiler";
+import veriler from "../Veriler/TumBilgiler";
 import ProgramGenerator from "../Utils/ProgramGenerator";
 
 var screen = Dimensions.get("window");
 
 export default class Program extends Component {
-    state = {
-        gun: -1,
-        ad_soyad: "",
-        no: "",
-        bolum: "",
-        sinif: 0,
-        aldigiDersler: [{
-            ad: " ",
-            dersKodu: "",
-            hoca_adi: " ",
-            hangiSube: 0,
-            baslamaSaati: [" , , , ", ", , ,"]
-        }],
-        table: this.createArray(),
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            gun: -1,
+            ad_soyad: "",
+            no: props.route.params.ogrenciNo,
+            bolum: "",
+            sinif: 0,
+            aldigiDersler: [{
+                ad: " ",
+                dersKodu: "",
+                hoca_adi: " ",
+                hangiSube: 0,
+                baslamaSaati: [" , , , ", ", , ,"]
+            }],
+            table: this.createArray(),
+            ad: "",
+            soyad: "",
+        }
     }
+
     componentDidMount() {
         var today = new Date();
         var day = today.getDay();
         this.setState({gun: day})
 
-        const data = veriler.createOgrenciListesi("171101072")
-        this.setState({
-            ad_soyad: data.ad_soyad,
-            no: data.no,
-            bolum: data.bolum,
-            sinif: data.sinif,
-            aldigiDersler: data.aldigiDersler,
-        }, () => {this.derslerToTabloMapping();})
+        const data = veriler.getOgrenciBilgisi(this.state.no)
+        if(data == null) {
+            Alert.alert(
+                "hata ",
+                "öğrenci bulunamadı",
+                [
+                    { text: "OK", onPress: () => this.props.navigation.navigate('Login')}
+                ],
+                { cancelable: false }
+            );
+        }
+        else {
+            this.setState({
+                ad_soyad: data.ad_soyad,
+                bolum: data.bolum,
+                sinif: data.sinif,
+                aldigiDersler: data.aldigiDersler,
+                ad: data.ad_soyad.substring(0, data.ad_soyad.lastIndexOf(" ")),
+                soyad: data.ad_soyad.substring(data.ad_soyad.lastIndexOf(" ") + 1),
+
+            }, () => {this.derslerToTabloMapping();})
+        }
     }
 
     createArray() {
@@ -56,7 +75,6 @@ export default class Program extends Component {
         tablo = ProgramGenerator.createTablo(data);
         this.setState({table: tablo,})
     }
-
 
     render() {
     return (
@@ -652,16 +670,16 @@ export default class Program extends Component {
 
 const styles = StyleSheet.create({
     cell: {
-        backgroundColor: '#e9e5e5',
+        backgroundColor: '#efebeb',
         width: screen.width / 6.5,
         borderRightWidth: 1,
         borderRightColor: '#f2f2f2',
-        borderBottomColor: '#f2f2f2',
+        borderBottomColor: 'white',
         borderBottomWidth: 0.5
     },
 
     cell2: {
-        backgroundColor: '#e9e5e5',
+        backgroundColor: '#efebeb',
         width: screen.width / 6.5,
         borderRightWidth: 1,
         borderRightColor: '#f2f2f2',
@@ -669,16 +687,16 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.5
     },
     clock: {
-        backgroundColor: '#e9e5e5',
+        backgroundColor: '#efebeb',
         width: screen.width / 13,
         borderBottomWidth: 0.5,
-        borderBottomColor: '#f2f2f2',
+        borderBottomColor: 'white',
         borderRightWidth: 2,
         borderRightColor: '#f18a21',
         height: screen.height / 12.9
     },
     clock2: {
-        backgroundColor: '#e9e5e5',
+        backgroundColor: '#efebeb',
         width: screen.width / 13,
         borderBottomWidth: 0.5,
         borderBottomColor: '#B00D23',
@@ -740,5 +758,4 @@ const styles = StyleSheet.create({
         marginBottom: 2,
         color: "black",
     },
-
 });
