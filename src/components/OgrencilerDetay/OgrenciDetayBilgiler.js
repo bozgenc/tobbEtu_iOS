@@ -3,6 +3,7 @@ import {StyleSheet, Dimensions, Text, TouchableOpacity, View} from 'react-native
 import {Header, Left, Right} from "native-base";
 
 var screen = Dimensions.get('window');
+
 export default class OgrenciDetayBilgiler extends Component {
     constructor(props) {
         super(props);
@@ -16,21 +17,23 @@ export default class OgrenciDetayBilgiler extends Component {
 
     render() {
         return (
-            <View style = {{flex: 1}}>
+            <View style = {{flex: 1, backgroundColor: "#faf8f8"}}>
                 <View>
-                    <Header style = {{backgroundColor: 'white'}} >
+                    <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
                             <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('Ogrenciler')}
+                                onPress={() => {
+                                    this.props.navigation.popToTop();
+                                }}
                                 style={{color: "black" }}
                             >
                                 <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    ⭠
+                                    {"<"}
                                 </Text>
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>profil</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Profil</Text>
 
                         <Right>
                         </Right>
@@ -38,7 +41,7 @@ export default class OgrenciDetayBilgiler extends Component {
                 </View>
 
                 <View style = {{flex: 1, justifyContent: 'flex-start', alignItems: 'flex-start', marginLeft: 4.3, marginRight: 10, backgroundColor: '#faf8f8'}}>
-                    <View flexDirection = "row" style = {styles.viewStyle}>
+                    <View flexDirection = "column" style = {styles.viewStyleTop}>
                         <Text style = {styles.textStyle2}>
                             İsim: {" "}
                         </Text>
@@ -47,7 +50,7 @@ export default class OgrenciDetayBilgiler extends Component {
                         </Text>
                     </View>
 
-                    <View flexDirection = "row" style = {styles.viewStyle}>
+                    <View flexDirection = "column" style = {styles.viewStyle}>
                         <Text style = {styles.textStyle2}>
                             Numara: {" "}
                         </Text>
@@ -56,7 +59,7 @@ export default class OgrenciDetayBilgiler extends Component {
                         </Text>
                     </View>
 
-                    <View flexDirection = "row" style = {styles.viewStyle}>
+                    <View flexDirection = "column" style = {styles.viewStyle}>
                         <Text style = {styles.textStyle2}>
                             Bölüm: {" "}
                         </Text>
@@ -65,7 +68,7 @@ export default class OgrenciDetayBilgiler extends Component {
                         </Text>
                     </View>
 
-                    <View flexDirection = "row" style = {styles.viewStyle}>
+                    <View flexDirection = "column" style = {styles.viewStyle}>
                         <Text style = {styles.textStyle2}>
                             Sınıf: {" "}
                         </Text>
@@ -81,7 +84,18 @@ export default class OgrenciDetayBilgiler extends Component {
 
 const styles = StyleSheet.create({
     viewStyle: {
-        marginTop: 8,
+        marginTop: 5,
+        paddingVertical: 2,
+        paddingHorizontal: 20,
+        backgroundColor: '#efebeb',
+        borderWidth: 0.2,
+        borderColor: '#B00D23',
+        borderRadius: 5,
+        height: 50,
+        width: screen.width * 96.6 / 100,
+    },
+    viewStyleTop: {
+        marginTop: 10,
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
@@ -93,17 +107,15 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         marginTop: 5,
-        paddingVertical: 5,
         marginLeft: 2,
         fontSize: 14,
         fontFamily: 'HelveticaNeue-Medium'
     },
     textStyle2: {
         marginTop: 5,
-        paddingVertical: 5,
         marginLeft: 2,
-        fontSize: 14,
-        fontFamily: 'HelveticaNeue-Medium',
-        color: 'grey',
+        fontSize: 12,
+        fontFamily: 'HelveticaNeue-Thin',
+        color: 'black',
     }
 });

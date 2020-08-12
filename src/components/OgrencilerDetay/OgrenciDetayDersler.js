@@ -3,6 +3,13 @@ import {Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View} from 're
 import {Header, Left, Right} from "native-base";
 
 var screen = Dimensions.get('window');
+const selectedDers = {
+    dersAdi: "",
+    dersKodu: "",
+    hangiSube: "",
+    hocaAdi: "",
+    baslamaSaati: [],
+}
 
 export default class OgrenciDetayDersler extends Component {
     constructor(props) {
@@ -10,39 +17,58 @@ export default class OgrenciDetayDersler extends Component {
         this.state = {
             selectedKisi: props.route.params.selectedKisi,
             dersler: props.route.params.selectedKisi.aldigiDersler,
+            progressPermission: false,
         }
     }
 
     componentDidMount() {
-        var today = new Date();
-        var day = today.getDay();
-        this.setState({gun: day})
+    }
+
+    setDersBilgisi = (item) => {
+        selectedDers.dersAdi = item.ad;
+        selectedDers.dersKodu = item.dersKodu;
+        selectedDers.hangiSube = item.baslamaSaati[0].charAt(item.baslamaSaati[0].lastIndexOf(",") - 1);
+        selectedDers.baslamaSaati = item.baslamaSaati;
+    }
+
+    static passSelectedDers() {
+        return selectedDers;
     }
 
     render() {
         return (
-            <View style = {{flex: 1}}>
+            <View style = {{flex: 1, backgroundColor: "#faf8f8"}}>
                 <View>
-                    <Header style = {{backgroundColor: 'white'}} >
+                    <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
                             <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('Ogrenciler')}
+                                onPress={() => {
+                                    this.props.navigation.popToTop();
+                                }}
                                 style={{color: "black" }}
                             >
                                 <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    ⭠
+                                    {"<"}
                                 </Text>
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>profil</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Dersler</Text>
 
                         <Right>
                         </Right>
                     </Header>
                 </View>
 
-                <View style = {{flex: 1, justifyContent: 'center', alignItems: 'flex-start', marginLeft: 4.3, marginRight: 10, backgroundColor: '#faf8f8'}}>
+                <View style = {{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    marginLeft: 4.3,
+                    marginRight: 10,
+                    marginTop: 10 ,
+                    backgroundColor: '#faf8f8'}}
+                >
                     <FlatList
                         directionalLockEnabled = {true}
                         showsVerticalScrollIndicator = {false}
@@ -51,11 +77,15 @@ export default class OgrenciDetayDersler extends Component {
                         data = {this.state.dersler}
                         renderItem={({item}) => (
                             <TouchableOpacity
-                                onPress = {() => {console.log(item.ad)}}
+                                onPress = {() => {
+                                  this.setDersBilgisi(item);
+                                  this.props.navigation.navigate("DersDetay")
+
+                                }}
                             >
-                                <View flexDirection = "row" style = {styles.arrayItem}>
-                                    <Text style = {styles.textStyle}>{item.dersKodu} {":"} </Text>
-                                    <Text style = {styles.textStyle}>{item.ad} </Text>
+                                <View flexDirection = "column" style = {styles.arrayItem}>
+                                    <Text style = {styles.textStyle}>{item.dersKodu} {item.baslamaSaati[0].charAt(item.baslamaSaati[0].lastIndexOf(",") - 1) != 0 ? "-" : ""} {item.baslamaSaati[0].charAt(item.baslamaSaati[0].lastIndexOf(",") - 1)}</Text>
+                                    <Text style = {styles.textStyle2}>{item.ad} </Text>
                                 </View>
                             </TouchableOpacity>
                         )}/>
@@ -67,7 +97,7 @@ export default class OgrenciDetayDersler extends Component {
 
 const styles = StyleSheet.create({
     arrayItem: {
-        marginTop: 8,
+        marginTop: 5,
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
@@ -79,9 +109,15 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         marginTop: 5,
-        paddingVertical: 5,
         marginLeft: 2,
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: 'HelveticaNeue-Medium'
+    },
+    textStyle2: {
+        marginTop: 1,
+        paddingVertical: 3,
+        marginLeft: 2,
+        fontSize: 15,
+        fontFamily: 'HelveticaNeue-Thin'
     },
 });

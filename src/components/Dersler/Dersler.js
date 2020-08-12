@@ -20,9 +20,9 @@ export default class Dersler extends Component {
 
     render() {
         return (
-            <View style = {{flex: 1,}}>
+            <View style = {{flex: 1, backgroundColor: "#faf8f8"}}>
                 <View>
-                    <Header style = {{backgroundColor: 'white'}} >
+                    <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.openDrawer()}
@@ -34,7 +34,7 @@ export default class Dersler extends Component {
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>dersler</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Dersler</Text>
 
                         <Right>
                         </Right>
@@ -52,9 +52,9 @@ export default class Dersler extends Component {
                             <TouchableOpacity
                                 onPress = {() => {console.log(item.ad)}}
                             >
-                                <View flexDirection = "row" style = {styles.arrayItem}>
-                                    <Text style = {styles.textStyle}>{item.dersKodu} {":"} </Text>
-                                    <Text style = {styles.textStyle}>{item.ad} </Text>
+                                <View flexDirection = "column" style = {styles.arrayItem}>
+                                    <Text style = {styles.textStyle}>{item.dersKodu}</Text>
+                                    <Text style = {styles.textStyle2}>{item.ad} </Text>
                                 </View>
                             </TouchableOpacity>
                         )}/>
@@ -78,9 +78,15 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         marginTop: 5,
-        paddingVertical: 5,
         marginLeft: 2,
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: 'HelveticaNeue-Medium'
+    },
+    textStyle2: {
+        marginTop: 1,
+        paddingVertical: 3,
+        marginLeft: 2,
+        fontSize: 15,
+        fontFamily: 'HelveticaNeue-Thin'
     },
 });

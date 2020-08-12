@@ -34,9 +34,9 @@ export default class Cumartesi extends Component {
 
     render() {
         return (
-            <View style = {{flex: 1}}>
+            <View style = {{flex: 1, backgroundColor: "#faf8f8"}}>
                 <View>
-                    <Header style = {{backgroundColor: 'white'}} >
+                    <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.openDrawer()}
@@ -48,14 +48,22 @@ export default class Cumartesi extends Component {
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>servisler</Text>
+                        <Text style = {{
+                            marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Servisler</Text>
 
                         <Right>
                         </Right>
                     </Header>
                 </View>
 
-                <View style = {{flex: 1, justifyContent: 'center', alignItems: 'flex-start', marginLeft: 4.3, marginRight: 10, backgroundColor: '#faf8f8'}}>
+                <View style = {{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    marginLeft: 4.3,
+                    marginRight: 10,
+                    backgroundColor: '#faf8f8'}}
+                >
                     <FlatList
                         directionalLockEnabled = {true}
                         showsVerticalScrollIndicator = {false}

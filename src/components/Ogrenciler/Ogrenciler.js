@@ -18,6 +18,7 @@ export default class Program extends Component {
         super(props);
         this.state = {
             tumOgrenciler: [],
+            progressPermission: false,
         }
     }
 
@@ -36,15 +37,23 @@ export default class Program extends Component {
         this.setState({tumOgrenciler: ogrencilerList})
     }
 
+    setData = (item) => {
+        selectedKisi.ad_soyad = item.ad_soyad;
+        selectedKisi.no = item.no;
+        selectedKisi.aldigiDersler = item.aldigiDersler;
+        selectedKisi.bolum = item.bolum;
+        selectedKisi.sinif = item.sinif;
+    }
+
     static passSelectedKisi(){
         return selectedKisi;
     }
 
     render() {
         return (
-            <View style = {{flex: 1}}>
+            <View style = {{flex: 1, backgroundColor: "#faf8f8"}}>
                 <View>
-                    <Header style = {{backgroundColor: 'white'}} >
+                    <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.openDrawer()}
@@ -56,7 +65,7 @@ export default class Program extends Component {
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>öğrenciler</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Öğrenciler</Text>
 
                         <Right>
                         </Right>
@@ -73,16 +82,14 @@ export default class Program extends Component {
                         renderItem={({item}) => (
                             <TouchableOpacity
                                 onPress={() => {
-                                    selectedKisi.ad_soyad = item.ad_soyad;
-                                    selectedKisi.no = item.no;
-                                    selectedKisi.aldigiDersler = item.aldigiDersler;
-                                    selectedKisi.bolum = item.bolum;
-                                    selectedKisi.sinif = item.sinif;
-                                    this.props.navigation.navigate('OgrenciDetayBilgiler')}
-                                }
+                                    this.setData(item);
+                                    this.props.navigation.navigate('OgrenciDetayBilgiler')
+
+                                }}
                             >
                                 <View style={styles.arrayItem}>
                                     <Text style={styles.textStyle}>{item.ad_soyad} </Text>
+                                    <Text style={styles.textStyle2}>{item.bolum} </Text>
                                 </View>
                             </TouchableOpacity>
                         )}/>
@@ -94,9 +101,9 @@ export default class Program extends Component {
 
 const styles = StyleSheet.create({
     arrayItem: {
-        marginTop: 8,
+        marginTop: 5,
         paddingVertical: 2,
-        paddingHorizontal: 8,
+        paddingHorizontal: 15,
         backgroundColor: '#efebeb',
         borderWidth: 0.2,
         borderColor: '#B00D23',
@@ -106,9 +113,15 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         marginTop: 5,
-        paddingVertical: 5,
         marginLeft: 4,
         fontSize: 12,
         fontFamily: 'HelveticaNeue-Medium'
+    },
+    textStyle2: {
+        marginTop: 5,
+        marginLeft: 4,
+        fontSize: 12,
+        fontFamily: 'HelveticaNeue-Thin',
+        color: 'black'
     }
 });

@@ -45,6 +45,27 @@ class TumBilgiler extends Component{
 
         return derslerList;
     }
+
+    getDers(id) {
+        var jsonData = dersler;
+        var derslerList = jsonData.dersler.map(function(item) {
+            return {
+                ad: item.ad,
+                dersKodu: item.dersKodu,
+                hangiSube: item.hangi_sube,
+                ogrenciList: item.ogrenciList,
+                hoca_adi: item.hoca_adi,
+            };
+        });
+
+        let dataToReturn = null;
+        for(var i = 0; i < derslerList.length; i++) {
+            if(derslerList[i].dersKodu == id)
+                dataToReturn = derslerList[i];
+        }
+
+        return dataToReturn;
+    }
 }
 
 const veriler = new TumBilgiler();
