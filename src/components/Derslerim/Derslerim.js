@@ -4,6 +4,13 @@ import {Header, Left, Right} from "native-base";
 import veriler from "../Veriler/TumBilgiler";
 
 var screen = Dimensions.get('window');
+var selectedDers = { // dersin sayfasına gidebilmek için gerekli
+    dersAdi: "",
+    dersKodu: "",
+    hangiSube: "",
+    hocaAdi: "",
+    baslamaSaati: [],
+}
 
 export default class Derslerim extends Component {
     constructor(props) {
@@ -23,6 +30,7 @@ export default class Derslerim extends Component {
             table: this.createArray(),
             ad: "",
             soyad: "",
+            progressPermission: false,
         }
     }
 
@@ -50,19 +58,23 @@ export default class Derslerim extends Component {
         }
     }
 
-    createArray() {
-        var tablo = new Array(10);
-        for (var i = 0; i < tablo.length; i++) {
-            tablo[i] = new Array(6);
-        }
-        return tablo;
+    setDersBilgisi = (item) => {
+        selectedDers.dersAdi = item.ad;
+        selectedDers.dersKodu = item.dersKodu;
+        selectedDers.hangiSube = item.baslamaSaati[0].charAt(item.baslamaSaati[0].lastIndexOf(",") - 1);
+        selectedDers.baslamaSaati = item.baslamaSaati;
+        selectedDers.hocaAdi = item.hoca_adi;
+    }
+
+    static passSelectedDers() {
+        return selectedDers;
     }
 
     render() {
         return (
-            <View style = {{flex: 1,}}>
+            <View style = {{flex: 1, backgroundColor: "#faf8f8"}}>
                 <View>
-                    <Header style = {{backgroundColor: 'white'}} >
+                    <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.openDrawer()}
@@ -74,14 +86,22 @@ export default class Derslerim extends Component {
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>derslerim</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Derslerim</Text>
 
                         <Right>
                         </Right>
                     </Header>
                 </View>
 
-                <View style = {{flex: 1, justifyContent: 'center', alignItems: 'flex-start', marginLeft: 4.3, marginRight: 10, backgroundColor: '#faf8f8'}}>
+                <View style = {{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    marginLeft: 4.3,
+                    marginRight: 10,
+                    marginTop: 10,
+                    backgroundColor: '#faf8f8',
+                }}>
                     <FlatList
                         directionalLockEnabled = {true}
                         showsVerticalScrollIndicator = {false}
@@ -90,11 +110,14 @@ export default class Derslerim extends Component {
                         data = {this.state.aldigiDersler}
                         renderItem={({item}) => (
                             <TouchableOpacity
-                                onPress = {() => {console.log(item.ad)}}
+                                onPress = {() => {
+                                    this.setDersBilgisi(item);
+                                    this.props.navigation.navigate('DersDetay')
+                                }}
                             >
-                                <View flexDirection = "row" style = {styles.arrayItem}>
-                                    <Text style = {styles.textStyle}>{item.dersKodu} {":"} </Text>
-                                    <Text style = {styles.textStyle}>{item.ad} </Text>
+                                <View flexDirection = "column" style = {styles.arrayItem}>
+                                    <Text style = {styles.textStyle}>{item.dersKodu} {item.baslamaSaati[0].charAt(item.baslamaSaati[0].lastIndexOf(",") - 1) != 0 ? "-" : ""} {item.baslamaSaati[0].charAt(item.baslamaSaati[0].lastIndexOf(",") - 1)}</Text>
+                                    <Text style = {styles.textStyle2}>{item.ad} </Text>
                                 </View>
                             </TouchableOpacity>
                         )}/>
@@ -106,7 +129,7 @@ export default class Derslerim extends Component {
 
 const styles = StyleSheet.create({
     arrayItem: {
-        marginTop: 8,
+        marginTop: 5,
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
@@ -115,12 +138,19 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         height: 50,
         width: screen.width * 96.6 / 100,
+
     },
     textStyle: {
         marginTop: 5,
-        paddingVertical: 5,
         marginLeft: 2,
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: 'HelveticaNeue-Medium'
+    },
+    textStyle2: {
+        marginTop: 1,
+        paddingVertical: 3,
+        marginLeft: 2,
+        fontSize: 15,
+        fontFamily: 'HelveticaNeue-Thin'
     },
 });

@@ -7,7 +7,7 @@ export default class AkademikKadro extends Component {
         return (
             <View style = {{flex: 1}}>
                 <View>
-                    <Header style = {{backgroundColor: 'white'}} >
+                    <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.openDrawer()}
@@ -19,7 +19,7 @@ export default class AkademikKadro extends Component {
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>akademik </Text>
+                        <Text style = {{marginTop: 10, fontSize: 25, fontFamily: "Helvetica-Bold"}}>Akademik Takvim </Text>
 
                         <Right>
                         </Right>
@@ -28,7 +28,7 @@ export default class AkademikKadro extends Component {
 
                 <View style = {{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                     <Text style = {{justifyContent: 'center', alignItems: 'center'}}>
-                        AKADEMİK KADRO
+                        AKADEMİK TAKVİM
                     </Text>
                 </View>
             </View>

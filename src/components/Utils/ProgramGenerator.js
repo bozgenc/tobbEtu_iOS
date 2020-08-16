@@ -425,7 +425,7 @@ export default class ProgramGenerator {
 
                 // ------------------------------------------------------------------- //
 
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("08.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("08.30")){
                     if(tablo[0][3] !== "") {
                         tablo[0][3] += " || "
                     }
@@ -439,7 +439,7 @@ export default class ProgramGenerator {
                         tablo[1][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("09.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("09.30")){
                     if(tablo[1][3] !== "") {
                         tablo[1][3] += " || "
                     }
@@ -453,7 +453,7 @@ export default class ProgramGenerator {
                         tablo[2][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("10.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("10.30")){
                     if(tablo[2][3] !== "") {
                         tablo[2][3] += " || "
                     }
@@ -467,7 +467,7 @@ export default class ProgramGenerator {
                         tablo[3][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("11.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("11.30")){
                     if(tablo[3][3] !== "") {
                         tablo[3][3] += " || "
                     }
@@ -481,7 +481,7 @@ export default class ProgramGenerator {
                         tablo[4][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("12.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("12.30")){
                     if(tablo[4][3] !== "") {
                         tablo[4][3] += " || "
                     }
@@ -495,7 +495,7 @@ export default class ProgramGenerator {
                         tablo[5][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("13.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("13.30")){
                     if(tablo[5][3] !== "") {
                         tablo[5][3] += " || "
                     }
@@ -509,7 +509,7 @@ export default class ProgramGenerator {
                         tablo[6][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("14.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("14.30")){
                     if(tablo[6][3] !== "") {
                         tablo[6][3] += " || "
                     }
@@ -523,7 +523,7 @@ export default class ProgramGenerator {
                         tablo[7][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("15.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("15.30")){
                     if(tablo[7][3] !== "") {
                         tablo[7][3] += " || "
                     }
@@ -537,7 +537,7 @@ export default class ProgramGenerator {
                         tablo[8][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("16.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("16.30")){
                     if(tablo[8][3] !== "") {
                         tablo[8][3] += " || "
                     }
@@ -551,7 +551,7 @@ export default class ProgramGenerator {
                         tablo[9][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşeme") && data[j].baslamaSaati[k].includes("17.30")){
+                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("17.30")){
                     if(tablo[9][3] !== "") {
                         tablo[9][3] += " || "
                     }
