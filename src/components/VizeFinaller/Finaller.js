@@ -7,7 +7,7 @@ export default class Finaller extends Component {
         return (
             <View style = {{flex: 1}}>
                 <View>
-                    <Header style = {{backgroundColor: 'white'}} >
+                    <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.openDrawer()}
@@ -19,7 +19,7 @@ export default class Finaller extends Component {
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>finaller</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Finaller</Text>
 
                         <Right>
                         </Right>
