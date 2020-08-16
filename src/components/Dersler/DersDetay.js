@@ -25,6 +25,7 @@ export default class DersDetay extends Component {
             ogrenci: {},
             ogrencilerDetayliList: [],
             dersSaatleri: "",
+            onScroll: false,
         }
     }
 
@@ -112,6 +113,13 @@ export default class DersDetay extends Component {
                         <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>{this.state.selectedDers.dersKodu}</Text>
 
                         <Right>
+                            <TouchableOpacity
+                                onPress={ () => this.setState({onScroll: false})}
+                            >
+                                <View style = {{height: this.state.onScroll ? 15 : 0}}>
+                                    <Text style = {{fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}>Başa Dön</Text>
+                                </View>
+                            </TouchableOpacity>
                         </Right>
                     </Header>
                 </View>
@@ -123,8 +131,9 @@ export default class DersDetay extends Component {
                     marginTop: 10,
                     marginRight: 10,
                     backgroundColor: '#faf8f8',
+                    height: this.state.onScroll ? 0 : 250
                 }}>
-                    <View flexDirection="column" style={styles.viewStylePrimal}>
+                    <View flexDirection="column" style={this.state.onScroll ? styles.viewStylePrimalOnScroll : styles.viewStylePrimal}>
                         <Text style={styles.textStyle2}>
                             Ders
                         </Text>
@@ -174,6 +183,7 @@ export default class DersDetay extends Component {
                     borderRadius: 5,
                 }}>
                     <FlatList
+                        onScroll={(e) => !this.state.onScroll ? this.setState({onScroll: true}) : console.log("")}
                         directionalLockEnabled = {true}
                         showsVerticalScrollIndicator = {false}
                         showsHorizontalScrollIndicator = {false}
@@ -222,6 +232,15 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
         shadowOpacity: .6,
         shadowRadius: 5,
+    },
+    viewStylePrimalOnScroll: {
+        paddingHorizontal: 20,
+        backgroundColor: '#efebeb',
+        borderWidth: 0.2,
+        borderColor: '#B00D23',
+        borderRadius: 5,
+        height: 0,
+        width: screen.width * 96.6 / 100,
     },
     textStyle: {
         marginTop: 5,

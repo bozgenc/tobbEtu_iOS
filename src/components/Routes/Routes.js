@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from "@react-navigation/stack/src/navigators/createStackNavigator";
 import Program from "../Program/Program";
@@ -28,16 +28,19 @@ const Stack = createStackNavigator();
 const Drawer =  createDrawerNavigator();
 const Tab = createMaterialTopTabNavigator();
 
+var screen = Dimensions.get('window');
+
 function MyTabs() {
     return (
         <Tab.Navigator
+            initialRouteName={"Program"}
             lazy = {true}
             tabBarPosition='bottom'
             tabBarOptions={{
-                style: {marginBottom: -4, height: 60}
+                style: {marginBottom: -2, height: screen.height / 15}
             }}
         >
-            <Tab.Screen name="Program" component={Program} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
+            <Tab.Screen name="Programım" component={Program} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
             <Tab.Screen name="Bilgilerim" component={Bilgilerim} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
             <Tab.Screen name="Derslerim" component={DerslerimStack}/>
         </Tab.Navigator>
@@ -79,7 +82,7 @@ function OgrencilerUcluTabDers2({}) {
             lazy = {true}
             tabBarPosition='bottom'
             tabBarOptions={{
-                style: {marginBottom: -4, height: 0},
+                style: {marginBottom: -2, height: 0}
             }}
         >
             <Tab.Screen name="OgrenciDetayBilgiler" component={OgrenciDetayBilgiler} initialParams={{selectedKisi: DersDetay.passSelectedKisi()}} />
@@ -108,7 +111,7 @@ function OgrencilerUcluTab() {
             lazy = {true}
             tabBarPosition='bottom'
             tabBarOptions={{
-                style: {marginBottom: -4, height: 60},
+                style: {marginBottom: -2, height: screen.height / 15}
             }}
         >
             <Tab.Screen name="Bilgiler" component={OgrenciDetayBilgiler} initialParams={{selectedKisi: Ogrenciler.passSelectedKisi()}} />
@@ -158,7 +161,6 @@ function OgrencilerUcluTabDers({}) {
         >
             <Tab.Screen name="Bilgiler" component={OgrenciDetayBilgiler} initialParams={{selectedKisi: DersDetay.passSelectedKisi()}} />
             <Tab.Screen name="Program" component={OgrenciDetayProgram} initialParams={{selectedKisi: DersDetay.passSelectedKisi()}}/>
-            <Tab.Screen name="Dersler" component={DerslerStack}/>
         </Tab.Navigator>
     );
 }
@@ -170,7 +172,7 @@ function ServislerTab() {
             lazy = {true}
             tabBarPosition='bottom'
             tabBarOptions={{
-                style: {marginBottom: -4, height: 60,}
+                style: {marginBottom: -2, height: screen.height / 15}
 
             }}
         >

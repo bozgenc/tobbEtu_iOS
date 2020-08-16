@@ -27,7 +27,6 @@ export default class Derslerim extends Component {
                 hangiSube: 0,
                 baslamaSaati: [" , , , ", ", , ,"]
             }],
-            table: this.createArray(),
             ad: "",
             soyad: "",
             progressPermission: false,
@@ -36,26 +35,14 @@ export default class Derslerim extends Component {
 
     componentDidMount() {
         const data = veriler.getOgrenciBilgisi(this.state.no)
-        if(data == null) {
-            Alert.alert(
-                "hata ",
-                "öğrenci bulunamadı",
-                [
-                    { text: "OK", onPress: () => this.props.navigation.navigate('Login')}
-                ],
-                { cancelable: false }
-            );
-        }
-        else {
-            this.setState({
-                ad_soyad: data.ad_soyad,
-                bolum: data.bolum,
-                sinif: data.sinif,
-                aldigiDersler: data.aldigiDersler,
-                ad: data.ad_soyad.substring(0, data.ad_soyad.lastIndexOf(" ")),
-                soyad: data.ad_soyad.substring(data.ad_soyad.lastIndexOf(" ") + 1),
-            })
-        }
+        this.setState({
+            ad_soyad: data.ad_soyad,
+            bolum: data.bolum,
+            sinif: data.sinif,
+            aldigiDersler: data.aldigiDersler,
+            ad: data.ad_soyad.substring(0, data.ad_soyad.lastIndexOf(" ")),
+            soyad: data.ad_soyad.substring(data.ad_soyad.lastIndexOf(" ") + 1),
+        })
     }
 
     setDersBilgisi = (item) => {
