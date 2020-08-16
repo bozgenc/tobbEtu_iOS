@@ -1,13 +1,13 @@
 export default class ProgramGenerator {
 
     static createTablo(data) {
-        var tablo = new Array(10);
+        var tablo = new Array(14);
 
         for (var i = 0; i < tablo.length; i++) {
             tablo[i] = new Array(6);
         }
 
-        for(var i = 0; i < 10; i++) {
+        for(var i = 0; i < 14; i++) {
             for(var j = 0; j < 6; j++) {
                 tablo[i][j] = "";
             }
@@ -149,6 +149,62 @@ export default class ProgramGenerator {
                     }
                     tablo[9][0] += data[j].dersKodu + "\n";
                     tablo[9][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[10][0] !== "") {
+                            tablo[10][0] += " || "
+                        }
+                        tablo[10][0] += data[j].dersKodu + "\n";
+                        tablo[10][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Pazartesi") && data[j].baslamaSaati[k].includes("18.30")) {
+                    if(tablo[10][0] !== "") {
+                        tablo[10][0] += " || "
+                    }
+                    tablo[10][0] += data[j].dersKodu + "\n";
+                    tablo[10][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[11][0] !== "") {
+                            tablo[11][0] += " || "
+                        }
+                        tablo[11][0] += data[j].dersKodu + "\n";
+                        tablo[11][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Pazartesi") && data[j].baslamaSaati[k].includes("19.30")) {
+                    if(tablo[11][0] !== "") {
+                        tablo[11][0] += " || "
+                    }
+                    tablo[11][0] += data[j].dersKodu + "\n";
+                    tablo[11][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[12][0] !== "") {
+                            tablo[2][0] += " || "
+                        }
+                        tablo[12][0] += data[j].dersKodu + "\n";
+                        tablo[12][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Pazartesi") && data[j].baslamaSaati[k].includes("20.30")) {
+                    if(tablo[12][0] !== "") {
+                        tablo[12][0] += " || "
+                    }
+                    tablo[12][0] += data[j].dersKodu + "\n";
+                    tablo[12][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[13][0] !== "") {
+                            tablo[13][0] += " || "
+                        }
+                        tablo[13][0] += data[j].dersKodu + "\n";
+                        tablo[13][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Pazartesi") && data[j].baslamaSaati[k].includes("21.30")) {
+                    if(tablo[13][0] !== "") {
+                        tablo[13][0] += " || "
+                    }
+                    tablo[13][0] += data[j].dersKodu + "\n";
+                    tablo[13][0] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                 }
 
                 // ------------------------------------------------------------------- //
@@ -279,12 +335,68 @@ export default class ProgramGenerator {
                         tablo[9][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Salı") && data[j].baslamaSaati[k].includes("17.30")){
+                if (data[j].baslamaSaati[k].includes("Salı") && data[j].baslamaSaati[k].includes("17.30")) {
                     if(tablo[9][1] !== "") {
                         tablo[9][1] += " || "
                     }
                     tablo[9][1] += data[j].dersKodu + "\n";
                     tablo[9][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[10][1] !== "") {
+                            tablo[10][1] += " || "
+                        }
+                        tablo[10][1] += data[j].dersKodu + "\n";
+                        tablo[10][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Salı") && data[j].baslamaSaati[k].includes("18.30")) {
+                    if(tablo[10][1] !== "") {
+                        tablo[10][1] += " || "
+                    }
+                    tablo[10][1] += data[j].dersKodu + "\n";
+                    tablo[10][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[11][1] !== "") {
+                            tablo[11][1] += " || "
+                        }
+                        tablo[11][1] += data[j].dersKodu + "\n";
+                        tablo[11][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Salı") && data[j].baslamaSaati[k].includes("19.30")) {
+                    if(tablo[11][1] !== "") {
+                        tablo[11][1] += " || "
+                    }
+                    tablo[11][1] += data[j].dersKodu + "\n";
+                    tablo[11][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[12][1] !== "") {
+                            tablo[2][1] += " || "
+                        }
+                        tablo[12][1] += data[j].dersKodu + "\n";
+                        tablo[12][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Salı") && data[j].baslamaSaati[k].includes("20.30")) {
+                    if(tablo[12][1] !== "") {
+                        tablo[12][1] += " || "
+                    }
+                    tablo[12][1] += data[j].dersKodu + "\n";
+                    tablo[12][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[13][1] !== "") {
+                            tablo[13][1] += " || "
+                        }
+                        tablo[13][1] += data[j].dersKodu + "\n";
+                        tablo[13][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Salı") && data[j].baslamaSaati[k].includes("21.30")) {
+                    if(tablo[13][1] !== "") {
+                        tablo[13][1] += " || "
+                    }
+                    tablo[13][1] += data[j].dersKodu + "\n";
+                    tablo[13][1] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                 }
 
                 // ------------------------------------------------------------------- //
@@ -415,12 +527,68 @@ export default class ProgramGenerator {
                         tablo[9][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Çarşamba") && data[j].baslamaSaati[k].includes("17.30")){
+                if (data[j].baslamaSaati[k].includes("Çarşamba") && data[j].baslamaSaati[k].includes("17.30")) {
                     if(tablo[9][2] !== "") {
-                        tablo[9][2] += " || ";
+                        tablo[9][2] += " || "
                     }
                     tablo[9][2] += data[j].dersKodu + "\n";
                     tablo[9][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[10][2] !== "") {
+                            tablo[10][2] += " || "
+                        }
+                        tablo[10][2] += data[j].dersKodu + "\n";
+                        tablo[10][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Çarşamba") && data[j].baslamaSaati[k].includes("18.30")) {
+                    if(tablo[10][2] !== "") {
+                        tablo[10][2] += " || "
+                    }
+                    tablo[10][2] += data[j].dersKodu + "\n";
+                    tablo[10][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[11][2] !== "") {
+                            tablo[11][2] += " || "
+                        }
+                        tablo[11][2] += data[j].dersKodu + "\n";
+                        tablo[11][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Çarşamba") && data[j].baslamaSaati[k].includes("19.30")) {
+                    if(tablo[11][2] !== "") {
+                        tablo[11][2] += " || "
+                    }
+                    tablo[11][2] += data[j].dersKodu + "\n";
+                    tablo[11][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[12][2] !== "") {
+                            tablo[2][2] += " || "
+                        }
+                        tablo[12][2] += data[j].dersKodu + "\n";
+                        tablo[12][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Çarşamba") && data[j].baslamaSaati[k].includes("20.30")) {
+                    if(tablo[12][2] !== "") {
+                        tablo[12][2] += " || "
+                    }
+                    tablo[12][2] += data[j].dersKodu + "\n";
+                    tablo[12][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[13][2] !== "") {
+                            tablo[13][2] += " || "
+                        }
+                        tablo[13][2] += data[j].dersKodu + "\n";
+                        tablo[13][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Çarşamba") && data[j].baslamaSaati[k].includes("21.30")) {
+                    if(tablo[13][2] !== "") {
+                        tablo[13][2] += " || "
+                    }
+                    tablo[13][2] += data[j].dersKodu + "\n";
+                    tablo[13][2] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                 }
 
                 // ------------------------------------------------------------------- //
@@ -551,12 +719,68 @@ export default class ProgramGenerator {
                         tablo[9][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("17.30")){
+                if (data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("17.30")) {
                     if(tablo[9][3] !== "") {
                         tablo[9][3] += " || "
                     }
                     tablo[9][3] += data[j].dersKodu + "\n";
                     tablo[9][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[10][3] !== "") {
+                            tablo[10][3] += " || "
+                        }
+                        tablo[10][3] += data[j].dersKodu + "\n";
+                        tablo[10][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("18.30")) {
+                    if(tablo[10][3] !== "") {
+                        tablo[10][3] += " || "
+                    }
+                    tablo[10][3] += data[j].dersKodu + "\n";
+                    tablo[10][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[11][3] !== "") {
+                            tablo[11][3] += " || "
+                        }
+                        tablo[11][3] += data[j].dersKodu + "\n";
+                        tablo[11][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("19.30")) {
+                    if(tablo[11][3] !== "") {
+                        tablo[11][3] += " || "
+                    }
+                    tablo[11][3] += data[j].dersKodu + "\n";
+                    tablo[11][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[12][3] !== "") {
+                            tablo[2][3] += " || "
+                        }
+                        tablo[12][3] += data[j].dersKodu + "\n";
+                        tablo[12][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("20.30")) {
+                    if(tablo[12][3] !== "") {
+                        tablo[12][3] += " || "
+                    }
+                    tablo[12][3] += data[j].dersKodu + "\n";
+                    tablo[12][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[13][3] !== "") {
+                            tablo[13][3] += " || "
+                        }
+                        tablo[13][3] += data[j].dersKodu + "\n";
+                        tablo[13][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Perşembe") && data[j].baslamaSaati[k].includes("21.30")) {
+                    if(tablo[13][3] !== "") {
+                        tablo[13][3] += " || "
+                    }
+                    tablo[13][3] += data[j].dersKodu + "\n";
+                    tablo[13][3] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                 }
 
                 // ------------------------------------------------------------------- //
@@ -687,12 +911,68 @@ export default class ProgramGenerator {
                         tablo[9][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Cuma") && !data[j].baslamaSaati[k].includes("Cumartesi") && data[j].baslamaSaati[k].includes("17.30")){
+                if (data[j].baslamaSaati[k].includes("Cuma") && !data[j].baslamaSaati[k].includes("Cumartesi") &&  data[j].baslamaSaati[k].includes("17.30")) {
                     if(tablo[9][4] !== "") {
                         tablo[9][4] += " || "
                     }
                     tablo[9][4] += data[j].dersKodu + "\n";
                     tablo[9][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[10][4] !== "") {
+                            tablo[10][4] += " || "
+                        }
+                        tablo[10][4] += data[j].dersKodu + "\n";
+                        tablo[10][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Cuma") && !data[j].baslamaSaati[k].includes("Cumartesi") &&  data[j].baslamaSaati[k].includes("18.30")) {
+                    if(tablo[10][4] !== "") {
+                        tablo[10][4] += " || "
+                    }
+                    tablo[10][4] += data[j].dersKodu + "\n";
+                    tablo[10][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[11][4] !== "") {
+                            tablo[11][4] += " || "
+                        }
+                        tablo[11][4] += data[j].dersKodu + "\n";
+                        tablo[11][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Cuma") && !data[j].baslamaSaati[k].includes("Cumartesi") &&  data[j].baslamaSaati[k].includes("19.30")) {
+                    if(tablo[11][4] !== "") {
+                        tablo[11][4] += " || "
+                    }
+                    tablo[11][4] += data[j].dersKodu + "\n";
+                    tablo[11][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[12][4] !== "") {
+                            tablo[2][4] += " || "
+                        }
+                        tablo[12][4] += data[j].dersKodu + "\n";
+                        tablo[12][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Cuma") && !data[j].baslamaSaati[k].includes("Cumartesi") &&  data[j].baslamaSaati[k].includes("20.30")) {
+                    if(tablo[12][4] !== "") {
+                        tablo[12][4] += " || "
+                    }
+                    tablo[12][4] += data[j].dersKodu + "\n";
+                    tablo[12][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[13][4] !== "") {
+                            tablo[13][4] += " || "
+                        }
+                        tablo[13][4] += data[j].dersKodu + "\n";
+                        tablo[13][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Cuma") && !data[j].baslamaSaati[k].includes("Cumartesi") && data[j].baslamaSaati[k].includes("21.30")) {
+                    if(tablo[13][4] !== "") {
+                        tablo[13][4] += " || "
+                    }
+                    tablo[13][4] += data[j].dersKodu + "\n";
+                    tablo[13][4] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                 }
 
                 // ------------------------------------------------------------------- //
@@ -823,12 +1103,68 @@ export default class ProgramGenerator {
                         tablo[9][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                     }
                 }
-                if(data[j].baslamaSaati[k].includes("Cumartesi") && data[j].baslamaSaati[k].includes("17.30")){
-                    if(tablo[9][5] !== ""){
+                if (data[j].baslamaSaati[k].includes("Cumartesi") && data[j].baslamaSaati[k].includes("17.30")) {
+                    if(tablo[9][5] !== "") {
                         tablo[9][5] += " || "
                     }
                     tablo[9][5] += data[j].dersKodu + "\n";
                     tablo[9][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[10][5] !== "") {
+                            tablo[10][5] += " || "
+                        }
+                        tablo[10][5] += data[j].dersKodu + "\n";
+                        tablo[10][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Cumartesi") && data[j].baslamaSaati[k].includes("18.30")) {
+                    if(tablo[10][5] !== "") {
+                        tablo[10][5] += " || "
+                    }
+                    tablo[10][5] += data[j].dersKodu + "\n";
+                    tablo[10][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[11][5] !== "") {
+                            tablo[11][5] += " || "
+                        }
+                        tablo[11][5] += data[j].dersKodu + "\n";
+                        tablo[11][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Cumartesi") && data[j].baslamaSaati[k].includes("19.30")) {
+                    if(tablo[11][5] !== "") {
+                        tablo[11][5] += " || "
+                    }
+                    tablo[11][5] += data[j].dersKodu + "\n";
+                    tablo[11][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[12][5] !== "") {
+                            tablo[2][5] += " || "
+                        }
+                        tablo[12][5] += data[j].dersKodu + "\n";
+                        tablo[12][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Cumartesi") && data[j].baslamaSaati[k].includes("20.30")) {
+                    if(tablo[12][5] !== "") {
+                        tablo[12][5] += " || "
+                    }
+                    tablo[12][5] += data[j].dersKodu + "\n";
+                    tablo[12][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    if (data[j].baslamaSaati[k].charAt(data[j].baslamaSaati[k].lastIndexOf(",") - 1) == 2) {
+                        if(tablo[13][5] !== "") {
+                            tablo[13][5] += " || "
+                        }
+                        tablo[13][5] += data[j].dersKodu + "\n";
+                        tablo[13][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
+                    }
+                }
+                if (data[j].baslamaSaati[k].includes("Cumartesi") && data[j].baslamaSaati[k].includes("21.30")) {
+                    if(tablo[13][5] !== "") {
+                        tablo[13][5] += " || "
+                    }
+                    tablo[13][5] += data[j].dersKodu + "\n";
+                    tablo[13][5] += "(" + details.substring(details.lastIndexOf(",") + 1) + ")";
                 }
             }
         }

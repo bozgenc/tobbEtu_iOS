@@ -33,7 +33,7 @@ export default class OgrenciDetayBilgiler extends Component {
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Profil</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Bilgiler</Text>
 
                         <Right>
                         </Right>

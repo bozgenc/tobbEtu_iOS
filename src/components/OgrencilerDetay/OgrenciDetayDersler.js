@@ -56,6 +56,7 @@ export default class OgrenciDetayDersler extends Component {
                         <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Dersler</Text>
 
                         <Right>
+                            <Text style = {{marginTop: 10, fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}>{this.state.selectedKisi.ad_soyad}</Text>
                         </Right>
                     </Header>
                 </View>
