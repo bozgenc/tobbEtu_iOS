@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View, Animated} from 'react-native';
 import {Header, Left, Right} from "native-base";
 import veriler from "../Veriler/TumBilgiler";
 import OgrenciDetayBilgiler from "../OgrencilerDetay/OgrenciDetayBilgiler";
@@ -26,6 +26,7 @@ export default class DersDetay extends Component {
             ogrencilerDetayliList: [],
             dersSaatleri: "",
             onScroll: false,
+            fadeOut: new Animated.Value(1),
         }
     }
 
@@ -82,6 +83,29 @@ export default class DersDetay extends Component {
         })
     }
 
+    onScroll = (e) => {
+        Animated.timing(this.state.fadeOut, {
+            toValue : 0,
+            duration: 300,
+            useNativeDriver: true,
+        }).start( () => {
+            setTimeout(() => {
+                if(!this.state.onScroll)
+                    this.setState({onScroll: true})
+            }, 450)
+        });
+    }
+
+    onScrollBack = () => {
+        Animated.timing(this.state.fadeOut, {
+            toValue: 1,
+            duration: 300,
+            useNativeDriver: true
+        }).start(() => {
+            this.setState({onScroll: false})
+        })
+    }
+
     setData = (item) => {
         selectedKisi.ad_soyad = item.ad_soyad;
         selectedKisi.no = item.no;
@@ -95,6 +119,7 @@ export default class DersDetay extends Component {
     }
 
     render() {
+        let {fadeOut} = this.state
         return (
             <View style = {{flex: 1, backgroundColor: "#faf8f8"}}>
                 <View>
@@ -114,7 +139,7 @@ export default class DersDetay extends Component {
 
                         <Right>
                             <TouchableOpacity
-                                onPress={ () => this.setState({onScroll: false})}
+                                onPress={ () => this.onScrollBack()}
                             >
                                 <View style = {{height: this.state.onScroll ? 15 : 0}}>
                                     <Text style = {{fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}>Başa Dön</Text>
@@ -124,14 +149,15 @@ export default class DersDetay extends Component {
                     </Header>
                 </View>
 
-                <View style={{
+                <Animated.View style={{
                     justifyContent: 'flex-start',
                     alignItems: 'flex-start',
                     marginLeft: 4.3,
                     marginTop: 10,
                     marginRight: 10,
                     backgroundColor: '#faf8f8',
-                    height: this.state.onScroll ? 0 : 250
+                    height: this.state.onScroll ? 0 : 250,
+                    opacity: fadeOut,
                 }}>
                     <View flexDirection="column" style={this.state.onScroll ? styles.viewStylePrimalOnScroll : styles.viewStylePrimal}>
                         <Text style={styles.textStyle2}>
@@ -159,16 +185,18 @@ export default class DersDetay extends Component {
                             {this.state.dersSaatleri}
                         </Text>
                     </View>
-                </View>
+                </Animated.View>
 
                 <View style = {{
                     justifyContent: 'center',
                     alignItems: 'center',
                     backgroundColor: '#faf8f8',
-                    marginTop: 10,
-                    marginBottom: 10,}}
+                    marginTop: this.state.onScroll ? 0 :10,
+                    marginBottom: this.state.onScroll ? 0 :10,
+                    height: this.state.onScroll ? 0 : 35
+                }}
                 >
-                    <Text style = {{textAlign: 'center', fontSize: 20, fontWeight: 'bold', color: '#B00D23', marginTop: 5,}}>
+                    <Text style = {styles.ogrencilerStyle}>
                         Öğrenciler
                     </Text>
                 </View>
@@ -180,10 +208,12 @@ export default class DersDetay extends Component {
                     marginLeft: 4.3,
                     marginRight: 10,
                     backgroundColor: '#faf8f8',
-                    borderRadius: 5,
+                    borderRadius: 10,
+                    borderTopWidth: 1,
+                    borderTopColor: '#eceaea'
                 }}>
                     <FlatList
-                        onScroll={(e) => !this.state.onScroll ? this.setState({onScroll: true}) : console.log("")}
+                        onScroll={(e) => this.onScroll(e)}
                         directionalLockEnabled = {true}
                         showsVerticalScrollIndicator = {false}
                         showsHorizontalScrollIndicator = {false}
@@ -216,7 +246,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#efebeb',
         borderWidth: 0.2,
         borderColor: '#B00D23',
-        borderRadius: 5,
+        borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
     },
@@ -226,11 +256,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#efebeb',
         borderWidth: 0.2,
         borderColor: '#B00D23',
-        borderRadius: 5,
+        borderRadius: 15,
         height: 250,
         width: screen.width * 96.6 / 100,
         shadowColor: 'black',
-        shadowOpacity: .6,
+        shadowOpacity: .2,
         shadowRadius: 5,
     },
     viewStylePrimalOnScroll: {
@@ -268,5 +298,12 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontFamily: 'HelveticaNeue-Thin',
         color: 'black',
+    },
+    ogrencilerStyle: {
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#B00D23',
+        marginTop: 5,
     },
 });
