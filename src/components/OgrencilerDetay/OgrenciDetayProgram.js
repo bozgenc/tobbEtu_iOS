@@ -59,26 +59,23 @@ export default class OgrenciDetayProgram extends Component {
 
     render() {
         return (
-            <View style = {{flex: 1, backgroundColor: "#faf8f8"}}>
+            <View style = {{flex: 1}}>
                 <View>
                     <Header style = {{backgroundColor: 'white'}} >
                         <Left>
                             <TouchableOpacity
-                                onPress={() => {
-                                    this.props.navigation.popToTop();
-                                }}
+                                onPress={() => this.props.navigation.openDrawer()}
                                 style={{color: "black" }}
                             >
                                 <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    {"<"}
+                                    ≡
                                 </Text>
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Program {"\n"} </Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Programım</Text>
 
                         <Right>
-                            <Text style = {{marginTop: 10, fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}>{this.state.selectedKisi.ad_soyad}</Text>
                         </Right>
                     </Header>
                 </View>
@@ -198,32 +195,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[0][0] !== undefined && this.state.table[0][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[0][0] !== undefined && this.state.table[0][0].length > 18 ? this.state.table[0][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[0][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[0][1] !== undefined && this.state.table[0][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[0][1] !== undefined && this.state.table[0][1].length > 18 ? this.state.table[0][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[0][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[0][2] !== undefined && this.state.table[0][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[0][2] !== undefined && this.state.table[0][2].length > 18 ? this.state.table[0][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[0][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[0][3] !== undefined && this.state.table[0][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[0][3] !== undefined && this.state.table[0][3].length > 18 ? this.state.table[0][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[0][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[0][4] !== undefined && this.state.table[0][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[0][4] !== undefined && this.state.table[0][4].length > 18 ? this.state.table[0][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[0][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[0][5] !== undefined && this.state.table[0][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[0][5] !== undefined && this.state.table[0][5].length > 18 ? this.state.table[0][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[0][5]}
                                         </Text>
                                     </View>
@@ -245,32 +242,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[1][0] !== undefined && this.state.table[1][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[1][0] !== undefined && this.state.table[1][0].length > 18 ? this.state.table[1][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[1][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[1][1] !== undefined && this.state.table[1][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[1][1] !== undefined && this.state.table[1][1].length > 18 ? this.state.table[1][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[1][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[1][2] !== undefined && this.state.table[1][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[1][2] !== undefined && this.state.table[1][2].length > 18 ? this.state.table[1][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[1][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[1][3] !== undefined && this.state.table[1][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[1][3] !== undefined && this.state.table[1][3].length > 18 ? this.state.table[1][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[1][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[1][4] !== undefined && this.state.table[1][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[1][4] !== undefined && this.state.table[1][4].length > 18 ? this.state.table[1][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[1][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[1][5] !== undefined && this.state.table[1][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[1][5] !== undefined && this.state.table[1][5].length > 18 ? this.state.table[1][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[1][5]}
                                         </Text>
                                     </View>
@@ -292,32 +289,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[2][0] !== undefined && this.state.table[2][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[2][0] !== undefined && this.state.table[2][0].length > 18 ? this.state.table[2][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[2][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[2][1] !== undefined && this.state.table[2][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[2][1] !== undefined && this.state.table[2][1].length > 18 ? this.state.table[2][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[2][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[2][2] !== undefined && this.state.table[2][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[2][2] !== undefined && this.state.table[2][2].length > 18 ? this.state.table[2][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[2][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[2][3] !== undefined && this.state.table[2][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[2][3] !== undefined && this.state.table[2][3].length > 18 ? this.state.table[2][3].length > 35 ? styles.textStyle3 : styles.textStyle2: styles.textStyle}>
                                             {this.state.table[2][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[2][4] !== undefined && this.state.table[2][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[2][4] !== undefined && this.state.table[2][4].length > 18 ?this.state.table[2][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[2][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[2][5] !== undefined && this.state.table[2][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[2][5] !== undefined && this.state.table[2][5].length > 18 ? this.state.table[2][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[2][5]}
                                         </Text>
                                     </View>
@@ -339,32 +336,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[3][0] !== undefined && this.state.table[3][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[3][0] !== undefined && this.state.table[3][0].length > 18 ? this.state.table[3][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[3][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[3][1] !== undefined && this.state.table[3][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[3][1] !== undefined && this.state.table[3][1].length > 18 ? this.state.table[3][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[3][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[3][2] !== undefined && this.state.table[3][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[3][2] !== undefined && this.state.table[3][2].length > 18 ? this.state.table[3][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[3][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[3][3] !== undefined && this.state.table[3][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[3][3] !== undefined && this.state.table[3][3].length > 18 ? this.state.table[3][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[3][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[3][4] !== undefined && this.state.table[3][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[3][4] !== undefined && this.state.table[3][4].length > 18 ? this.state.table[3][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[3][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[3][5] !== undefined && this.state.table[3][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[3][5] !== undefined && this.state.table[3][5].length > 18 ? this.state.table[3][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[3][5]}
                                         </Text>
                                     </View>
@@ -386,32 +383,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[4][0] !== undefined && this.state.table[4][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[4][0] !== undefined && this.state.table[4][0].length > 18 ? this.state.table[4][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[4][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[4][1] !== undefined && this.state.table[4][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[4][1] !== undefined && this.state.table[4][1].length > 18 ? this.state.table[4][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[4][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[4][2] !== undefined && this.state.table[4][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[4][2] !== undefined && this.state.table[4][2].length > 18 ? this.state.table[4][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[4][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[4][3] !== undefined && this.state.table[4][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[4][3] !== undefined && this.state.table[4][3].length > 18 ? this.state.table[4][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[4][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[4][4] !== undefined && this.state.table[4][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[4][4] !== undefined && this.state.table[4][4].length > 18 ? this.state.table[4][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[4][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[4][5] !== undefined && this.state.table[4][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[4][5] !== undefined && this.state.table[4][5].length > 18 ? this.state.table[4][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[4][5]}
                                         </Text>
                                     </View>
@@ -433,32 +430,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[5][0] !== undefined && this.state.table[5][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[5][0] !== undefined && this.state.table[5][0].length > 18 ? this.state.table[5][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[5][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[5][1] !== undefined && this.state.table[5][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[5][1] !== undefined && this.state.table[5][1].length > 18 ? this.state.table[5][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[5][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[5][2] !== undefined && this.state.table[5][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[5][2] !== undefined && this.state.table[5][2].length > 18 ? this.state.table[5][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[5][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[5][3] !== undefined && this.state.table[5][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[5][3] !== undefined && this.state.table[5][3].length > 18 ? this.state.table[5][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[5][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[5][4] !== undefined && this.state.table[5][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[5][4] !== undefined && this.state.table[5][4].length > 18 ? this.state.table[5][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[5][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[5][5] !== undefined && this.state.table[5][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[5][5] !== undefined && this.state.table[5][5].length > 18 ? this.state.table[5][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[5][5]}
                                         </Text>
                                     </View>
@@ -473,39 +470,39 @@ export default class OgrenciDetayProgram extends Component {
                                             width: screen.width / 13,
                                             marginTop: 8,
                                             marginBottom: 4,
-                                            color: "black"
+                                            color: "black",
                                         }}>
                                             14 {"\n"}
                                             30
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[6][0] !== undefined && this.state.table[6][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[6][0] !== undefined && this.state.table[6][0].length > 18 ? this.state.table[6][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[6][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[6][1] !== undefined && this.state.table[6][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[6][1] !== undefined && this.state.table[6][1].length > 18 ? this.state.table[6][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[6][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[6][2] !== undefined && this.state.table[6][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[6][2] !== undefined && this.state.table[6][2].length > 18 ? this.state.table[6][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[6][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[6][3] !== undefined && this.state.table[6][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[6][3] !== undefined && this.state.table[6][3].length > 18 ? this.state.table[6][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[6][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[6][4] !== undefined && this.state.table[6][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[6][4] !== undefined && this.state.table[6][4].length > 18 ? this.state.table[6][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[6][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[6][5] !== undefined && this.state.table[6][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[6][5] !== undefined && this.state.table[6][5].length > 18 ? this.state.table[6][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[6][5]}
                                         </Text>
                                     </View>
@@ -527,32 +524,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[7][0] !== undefined && this.state.table[7][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[7][0] !== undefined && this.state.table[7][0].length > 18 ? this.state.table[7][0].length > 35 ? styles.textStyle3 : styles.textStyle2 :styles.textStyle}>
                                             {this.state.table[7][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[7][1] !== undefined && this.state.table[7][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[7][1] !== undefined && this.state.table[7][1].length > 18 ? this.state.table[7][1].length > 35 ? styles.textStyle3 :styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[7][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[7][2] !== undefined && this.state.table[7][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[7][2] !== undefined && this.state.table[7][2].length > 18 ? this.state.table[7][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[7][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[7][3] !== undefined && this.state.table[7][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[7][3] !== undefined && this.state.table[7][3].length > 18 ? this.state.table[7][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[7][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[7][4] !== undefined && this.state.table[7][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[7][4] !== undefined && this.state.table[7][4].length > 18 ? this.state.table[7][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[7][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[7][5] !== undefined && this.state.table[7][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[7][5] !== undefined && this.state.table[7][5].length > 18 ? this.state.table[7][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[7][5]}
                                         </Text>
                                     </View>
@@ -574,32 +571,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[8][0] !== undefined && this.state.table[8][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[8][0] !== undefined && this.state.table[8][0].length > 18 ? this.state.table[8][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[8][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[8][1] !== undefined && this.state.table[8][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[8][1] !== undefined && this.state.table[8][1].length > 18 ? this.state.table[8][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[8][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[8][2] !== undefined && this.state.table[8][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[8][2] !== undefined && this.state.table[8][2].length > 18 ? this.state.table[8][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[8][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[8][3] !== undefined && this.state.table[8][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[8][3] !== undefined && this.state.table[8][3].length > 18 ? this.state.table[8][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[8][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[8][4] !== undefined && this.state.table[8][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[8][4] !== undefined && this.state.table[8][4].length > 18 ? this.state.table[8][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[8][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[8][5] !== undefined && this.state.table[8][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[8][5] !== undefined && this.state.table[8][5].length > 18 ? this.state.table[8][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[8][5]}
                                         </Text>
                                     </View>
@@ -622,37 +619,37 @@ export default class OgrenciDetayProgram extends Component {
                                     </View>
                                     <View style={styles.cell2}>
                                         <Text
-                                            style={this.state.table[9][0] !== undefined && this.state.table[9][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                            style={this.state.table[9][0] !== undefined && this.state.table[9][0].length > 18 ? this.state.table[9][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[9][0]}
                                         </Text>
                                     </View>
                                     <View style={styles.cell2}>
                                         <Text
-                                            style={this.state.table[9][1] !== undefined && this.state.table[9][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                            style={this.state.table[9][1] !== undefined && this.state.table[9][1].length > 18 ? this.state.table[9][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[9][1]}
                                         </Text>
                                     </View>
                                     <View style={styles.cell2}>
                                         <Text
-                                            style={this.state.table[9][2] !== undefined && this.state.table[9][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                            style={this.state.table[9][2] !== undefined && this.state.table[9][2].length > 18 ? this.state.table[9][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[9][2]}
                                         </Text>
                                     </View>
                                     <View style={styles.cell2}>
                                         <Text
-                                            style={this.state.table[9][3] !== undefined && this.state.table[9][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                            style={this.state.table[9][3] !== undefined && this.state.table[9][3].length > 18 ? this.state.table[9][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[9][3]}
                                         </Text>
                                     </View>
                                     <View style={styles.cell2}>
                                         <Text
-                                            style={this.state.table[9][4] !== undefined && this.state.table[9][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                            style={this.state.table[9][4] !== undefined && this.state.table[9][4].length > 18 ? this.state.table[9][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[9][4]}
                                         </Text>
                                     </View>
                                     <View style={styles.cell2}>
                                         <Text
-                                            style={this.state.table[9][5] !== undefined && this.state.table[9][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                            style={this.state.table[9][5] !== undefined && this.state.table[9][5].length > 18 ? this.state.table[9][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[9][5]}
                                         </Text>
                                     </View>
@@ -674,32 +671,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[10][0] !== undefined && this.state.table[10][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[10][0] !== undefined && this.state.table[10][0].length > 18 ? this.state.table[10][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[10][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[10][1] !== undefined && this.state.table[10][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[10][1] !== undefined && this.state.table[10][1].length > 18 ? this.state.table[10][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[10][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[10][2] !== undefined && this.state.table[10][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[10][2] !== undefined && this.state.table[10][2].length > 18 ? this.state.table[10][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[10][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[10][3] !== undefined && this.state.table[10][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[10][3] !== undefined && this.state.table[10][3].length > 18 ? this.state.table[10][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[10][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[10][4] !== undefined && this.state.table[10][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[10][4] !== undefined && this.state.table[10][4].length > 18 ? this.state.table[10][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[10][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[10][5] !== undefined && this.state.table[10][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[10][5] !== undefined && this.state.table[10][5].length > 18 ? this.state.table[10][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[10][5]}
                                         </Text>
                                     </View>
@@ -721,32 +718,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[11][0] !== undefined && this.state.table[11][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[11][0] !== undefined && this.state.table[11][0].length > 18 ? this.state.table[11][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[11][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[11][1] !== undefined && this.state.table[11][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[11][1] !== undefined && this.state.table[11][1].length > 18 ? this.state.table[11][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[11][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[11][2] !== undefined && this.state.table[11][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[11][2] !== undefined && this.state.table[11][2].length > 18 ? this.state.table[11][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[11][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[11][3] !== undefined && this.state.table[11][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[11][3] !== undefined && this.state.table[11][3].length > 18 ? this.state.table[11][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[11][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[11][4] !== undefined && this.state.table[11][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[11][4] !== undefined && this.state.table[11][4].length > 18 ? this.state.table[11][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[11][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[11][5] !== undefined && this.state.table[11][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[11][5] !== undefined && this.state.table[11][5].length > 18 ? this.state.table[11][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[11][5]}
                                         </Text>
                                     </View>
@@ -768,32 +765,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[12][0] !== undefined && this.state.table[12][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[12][0] !== undefined && this.state.table[12][0].length > 18 ? this.state.table[12][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[12][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[12][1] !== undefined && this.state.table[12][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[12][1] !== undefined && this.state.table[12][1].length > 18 ? this.state.table[12][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[12][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[12][2] !== undefined && this.state.table[12][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[12][2] !== undefined && this.state.table[12][2].length > 18 ? this.state.table[12][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[12][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[12][3] !== undefined && this.state.table[12][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[12][3] !== undefined && this.state.table[12][3].length > 18 ? this.state.table[12][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[12][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[12][4] !== undefined && this.state.table[12][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[12][4] !== undefined && this.state.table[12][4].length > 18 ? this.state.table[12][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[12][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell}>
-                                        <Text style = { this.state.table[12][5] !== undefined && this.state.table[12][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[12][5] !== undefined && this.state.table[12][5].length > 18 ? this.state.table[12][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[12][5]}
                                         </Text>
                                     </View>
@@ -815,32 +812,32 @@ export default class OgrenciDetayProgram extends Component {
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[13][0] !== undefined && this.state.table[13][0].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[13][0] !== undefined && this.state.table[13][0].length > 18 ? this.state.table[13][0].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[13][0]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[13][1] !== undefined && this.state.table[13][1].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[13][1] !== undefined && this.state.table[13][1].length > 18 ? this.state.table[13][1].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[13][1]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[13][2] !== undefined && this.state.table[13][2].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[13][2] !== undefined && this.state.table[13][2].length > 18 ? this.state.table[13][2].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[13][2]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[13][3] !== undefined && this.state.table[13][3].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[13][3] !== undefined && this.state.table[13][3].length > 18 ? this.state.table[13][3].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[13][3]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[13][4] !== undefined && this.state.table[13][4].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[13][4] !== undefined && this.state.table[13][4].length > 18 ? this.state.table[13][4].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[13][4]}
                                         </Text>
                                     </View>
                                     <View style = {styles.cell2}>
-                                        <Text style = { this.state.table[13][5] !== undefined && this.state.table[13][5].length > 18 ? styles.textStyle2 : styles.textStyle}>
+                                        <Text style = { this.state.table[13][5] !== undefined && this.state.table[13][5].length > 18 ? this.state.table[13][5].length > 35 ? styles.textStyle3 : styles.textStyle2 : styles.textStyle}>
                                             {this.state.table[13][5]}
                                         </Text>
                                     </View>
@@ -936,6 +933,15 @@ const styles = StyleSheet.create({
     },
     textStyle2: {
         fontSize: 9.7,
+        textAlign: "center",
+        fontFamily: "HelveticaNeue-Medium",
+        width: screen.width / 7,
+        marginTop: 8,
+        marginBottom: 2,
+        color: "black",
+    },
+    textStyle3: {
+        fontSize: 8.5,
         textAlign: "center",
         fontFamily: "HelveticaNeue-Medium",
         width: screen.width / 7,
