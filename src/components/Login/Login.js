@@ -62,7 +62,7 @@ export default class Login extends Component {
     render() {
         if(this.state.isLoading) {
             return (
-                <BarIndicator color='black'/>
+                <PacmanIndicator color='black'/>
             )
         }
         else
