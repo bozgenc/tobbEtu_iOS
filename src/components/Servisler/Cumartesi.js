@@ -62,9 +62,12 @@ export default class Cumartesi extends Component {
                     alignItems: 'flex-start',
                     marginLeft: 4.3,
                     marginRight: 10,
+                    height: screen.height,
                     backgroundColor: '#faf8f8'}}
                 >
                     <FlatList
+                        style = {{flex: 0}}
+                        initialNumToRender={this.state.dataArray.length}
                         directionalLockEnabled = {true}
                         showsVerticalScrollIndicator = {false}
                         showsHorizontalScrollIndicator = {false}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, ScrollView, TextInput, Button, TouchableOpacity, Image, Alert} from 'react-native';
 import Program from "../Program/Program";
-import Snackbar from 'react-native-snackbar';
+import AsyncStorage from '@react-native-community/async-storage';
+import {BallIndicator, BarIndicator, DotIndicator, MaterialIndicator, PacmanIndicator, PulseIndicator, SkypeIndicator, UIActivityIndicator, WaveIndicator,} from 'react-native-indicators';
 
 var bool = false;
 var no = "";
@@ -11,12 +12,30 @@ export default class Login extends Component {
         super();
         this.state = {
             ogrenciNo: "",
+            isLoading: true,
+        }
+    }
+
+    componentDidMount = async () => {
+        const loginAuth = await AsyncStorage.getItem('ogrenciNo');
+        if(loginAuth !== null) {
+            no = loginAuth;
+            this.setState({isLoading: true}, () => {
+                this.props.navigation.navigate('Program');
+            });
+        }
+        else {
+            this.setState({isLoading: false})
         }
     }
 
     onSubmit = () => {
-        if(bool)
-            this.props.navigation.navigate('Program');
+        if(bool) {
+            this.setState({isLoading: true}, () => {
+                AsyncStorage.setItem('ogrenciNo', no);
+                this.props.navigation.navigate('Program');
+            })
+        }
         else {
             Alert.alert(
                 "hata ",
@@ -41,6 +60,12 @@ export default class Login extends Component {
     }
 
     render() {
+        if(this.state.isLoading) {
+            return (
+                <BarIndicator color='black'/>
+            )
+        }
+        else
         return (
             <View style = {styles.container}>
                 <View style = {styles.header}>
@@ -71,7 +96,7 @@ export default class Login extends Component {
                                 paddingTop: 0,
                                 fontWeight: 'bold',
                             }}>
-                                giriş
+                                Giriş
                             </Text>
                         </View>
                     </TouchableOpacity>

@@ -108,15 +108,18 @@ export default class Program extends Component {
                     alignItems: 'flex-start',
                     marginLeft: 4.3,
                     marginRight: 10,
+                    height: screen.height,
                     backgroundColor: '#faf8f8'
                 }}>
                     <FlatList
+                        style = {{flex: 0}}
+                        initialNumToRender={this.state.tumOgrenciler.length}
                         directionalLockEnabled={true}
                         showsVerticalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.no}
                         data={this.state.tumOgrenciler}
-                        renderItem={({item}) => (
+                        renderItem={({item}) =>  (
                             <TouchableOpacity
                                 onPress={() => {
                                     this.setData(item);
