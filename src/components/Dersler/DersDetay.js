@@ -3,6 +3,7 @@ import {Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View, Animated
 import {Header, Left, Right} from "native-base";
 import veriler from "../Veriler/TumBilgiler";
 import OgrenciDetayBilgiler from "../OgrencilerDetay/OgrenciDetayBilgiler";
+import AsyncStorage from '@react-native-community/async-storage';
 
 var screen = Dimensions.get('window');
 var selectedKisi = {
@@ -30,6 +31,7 @@ export default class DersDetay extends Component {
     }
 
     componentDidMount() {
+        AsyncStorage.setItem("comingFromDersListesi", "true");
         let ders = veriler.getDers(this.state.selectedDers.dersKodu);
         this.setState({
             hocaAdi: ders.hoca_adi,

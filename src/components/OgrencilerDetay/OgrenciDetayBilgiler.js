@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {StyleSheet, Dimensions, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Dimensions, Text, TouchableOpacity, View, Alert,} from 'react-native';
 import {Header, Left, Right} from "native-base";
+import AsyncStorage from '@react-native-community/async-storage';
 
 var screen = Dimensions.get('window');
 
@@ -12,7 +13,22 @@ export default class OgrenciDetayBilgiler extends Component {
         }
     }
 
-    componentDidMount() {
+     componentDidMount = async () => {
+        var firstTime = await AsyncStorage.getItem("firstTime");
+        var comingFrom = await AsyncStorage.getItem("comingFromDersListesi");
+
+        if( firstTime == "true" &&  comingFrom == "true") {
+            AsyncStorage.setItem("firstTime", "false");
+            AsyncStorage.setItem("comingFromDersListesi", "false");
+            Alert.alert(
+                "Bilgilendirme",
+                "Ders listesi içerisinden bir öğrenci profiline ulaştığınızda sağa kaydırarak öğrencinin ders programını görüntüleyebilirsiniz.\n\nAncak aldığı derslerin detaylarını görüntülemek için 'Tüm Öğrenciler' menüsünden öğrenci profiline erişmeniz gerekir.",
+                [
+                    { text: "OK", onPress: () => console.log("İlk bilgilendirme")}
+                ],
+                { cancelable: false }
+            );
+        }
     }
 
     render() {
