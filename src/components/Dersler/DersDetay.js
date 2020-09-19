@@ -4,6 +4,7 @@ import {Header, Left, Right} from "native-base";
 import veriler from "../Veriler/TumBilgiler";
 import OgrenciDetayBilgiler from "../OgrencilerDetay/OgrenciDetayBilgiler";
 import AsyncStorage from '@react-native-community/async-storage';
+import {SearchBar} from "react-native-elements";
 
 var screen = Dimensions.get('window');
 var selectedKisi = {
@@ -25,6 +26,7 @@ export default class DersDetay extends Component {
             baslamaSaati: [],
             ogrenci: {},
             ogrencilerDetayliList: [],
+            tumOgrencilerBackup: [],
             dersSaatleri: "",
             showOgrenci: false,
         }
@@ -33,27 +35,44 @@ export default class DersDetay extends Component {
     componentDidMount() {
         AsyncStorage.setItem("comingFromDersListesi", "true");
         let ders = veriler.getDers(this.state.selectedDers.dersKodu);
+        var ogrenciListesiOnlyNumber = [];
+        var temp = ders.ogrenciList;
+
+        for(var i = 0; i < temp.length; i++) { // ders listesinde duplicate kayıtlar olmaması için
+            if(!ogrenciListesiOnlyNumber.includes(temp[i].numara))
+                ogrenciListesiOnlyNumber.push(temp[i].numara);
+        }
+
         this.setState({
             hocaAdi: ders.hoca_adi,
-            ogrencilerNumaraList: ders.ogrenciList,
+            ogrencilerNumaraList: ogrenciListesiOnlyNumber,
         }, () => {this.getDersiAlanOgrenciler();})
     }
 
-    getDersiAlanOgrenciler() {
+    getDersiAlanOgrenciler() { // numaralar listesinden öğrencinin detaylı bilgilerini çekme işlemi
         var ogrenci = {};
         var temp = [];
 
         for(var i = 0; i < this.state.ogrencilerNumaraList.length; i++) {
-            ogrenci = veriler.getOgrenciBilgisi(this.state.ogrencilerNumaraList[i].numara)
-            temp.push(ogrenci);
+            ogrenci = veriler.getOgrenciBilgisi(this.state.ogrencilerNumaraList[i])
+            if(!temp.includes(ogrenci))
+                temp.push(ogrenci);
         }
 
-        this.setState({ogrencilerDetayliList: temp}, () => {
+        temp.sort(function(a, b) {
+            if(a.routes) return -1;
+            if(b.routes) return 1;
+            if(a.ad_soyad.toLowerCase() < b.ad_soyad.toLowerCase()) return -1;
+            if(a.ad_soyad.toLowerCase() > b.ad_soyad.toLowerCase()) return 1;
+            return 0;
+        });
+
+        this.setState({ogrencilerDetayliList: temp, tumOgrencilerBackup:temp}, () => {
             this.getDersSaatleri();
         })
     }
 
-    getDersSaatleri() {
+    getDersSaatleri() { // öğrencinin detaylı bilgilerinden aldığı derslerin bilgilerini çekme
         var temp = [];
         for(var i = 0; i < this.state.ogrencilerDetayliList[0].aldigiDersler.length; i++) {
             if(this.state.ogrencilerDetayliList[0].aldigiDersler[i].dersKodu == this.state.selectedDers.dersKodu) {
@@ -66,7 +85,7 @@ export default class DersDetay extends Component {
         });
     }
 
-    mapToString() {
+    mapToString() { // ders bilgilerini sınıflandırma
         var finalStr = "";
         for(var i = 0; i < this.state.baslamaSaati.length; i++) {
             if(this.state.baslamaSaati != "") {
@@ -96,6 +115,21 @@ export default class DersDetay extends Component {
         return selectedKisi;
     }
 
+    onFilter = (text) => {
+        this.setState({searchingFor: text})
+        text = text.toLocaleUpperCase("TR");
+        var textTurkceKarakter = text.replace(/s/g, "ş").replace(/i/g, "ı").replace(/c/g, "ç").replace(/u/g, "ü").replace(/g/g, "ğ").replace(/o/g, "ö");
+
+        let updatedList = this.state.tumOgrencilerBackup.filter(function(item) {
+            return item.ad_soyad.replace("İ", "I").toLocaleUpperCase().includes(text) || item.bolum.toLocaleUpperCase("TR").includes(text) || item.no.includes(text) || item.ad_soyad.toLocaleUpperCase().includes(textTurkceKarakter)
+                || item.ad_soyad.toLocaleUpperCase().includes(text)
+        })
+
+        this.setState({
+            ogrencilerDetayliList: updatedList
+        })
+    }
+
     render() {
         if (this.state.showOgrenci) {
             return (
@@ -121,12 +155,22 @@ export default class DersDetay extends Component {
                                     onPress={() => this.setState({showOgrenci: false})}
                                 >
                                     <View>
-                                        <Text style={{fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}>Geri Dön</Text>
+                                        <Text style={{fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}> Geri Dön  </Text>
                                     </View>
                                 </TouchableOpacity>
                             </Right>
                         </Header>
                     </View>
+
+                    <SearchBar placeholder=" Öğrenci Ara... " lightTheme round
+                               containerStyle={{backgroundColor: '#faf8f8', width: screen.width, marginRight: 20}}
+                               inputContainerStyle={{backgroundColor: '#e3dddd',}}
+                               value={this.state.searchingFor}
+                               onChangeText={(text) => {
+                                   this.onFilter(text);
+                               }}
+                               autoCorrect={false}
+                    />
 
                     <View style={{
                         flex: 1,
@@ -141,11 +185,11 @@ export default class DersDetay extends Component {
                     }}>
                         <FlatList
                             style={{flex: 0}}
-                            initialNumToRender={this.state.ogrencilerDetayliList.length}
+                            initialNumToRender={50}
                             directionalLockEnabled={true}
                             showsVerticalScrollIndicator={false}
                             showsHorizontalScrollIndicator={false}
-                            keyExtractor={(item) => item.no}
+                            keyExtractor={(item) => item.no + " " + item.bolum }
                             data={this.state.ogrencilerDetayliList}
                             renderItem={({item}) => (
                                 <TouchableOpacity
@@ -231,7 +275,7 @@ export default class DersDetay extends Component {
                         }}>
                             <View style={{flex: 1, marginTop: 20, height: 20}}>
                                 <Text style={{fontSize: 18, color: '#B00D23'}}>
-                                    Öğrencileri Göster
+                                    Öğrencileri Göster ({this.state.tumOgrencilerBackup.length})
                                 </Text>
                             </View>
                         </TouchableOpacity>
@@ -247,8 +291,6 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
         borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
@@ -257,8 +299,6 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
         borderRadius: 15,
         height: 250,
         width: screen.width * 96.6 / 100,
@@ -283,7 +323,7 @@ const styles = StyleSheet.create({
     textStyleListe: {
         marginTop: 5,
         marginLeft: 2,
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: 'HelveticaNeue-Medium'
     },
     textStyleListe2: {

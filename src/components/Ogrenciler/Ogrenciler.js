@@ -55,12 +55,12 @@ export default class Program extends Component {
 
     onFilter = (text) => {
         this.setState({searchingFor: text})
-        text = text.toLowerCase();
+        text = text.toLocaleUpperCase("TR");
         var textTurkceKarakter = text.replace(/s/g, "ş").replace(/i/g, "ı").replace(/c/g, "ç").replace(/u/g, "ü").replace(/g/g, "ğ").replace(/o/g, "ö");
 
         let updatedList = this.state.tumOgrencilerBackup.filter(function(item) {
-            return item.ad_soyad.replace("İ", "I").toLowerCase().includes(text) || item.no.includes(text) || item.ad_soyad.toLowerCase().includes(textTurkceKarakter)
-                || item.ad_soyad.toLowerCase().includes(text)
+            return item.ad_soyad.replace("İ", "I").toLocaleUpperCase().includes(text) || item.no.includes(text) || item.bolum.toLocaleUpperCase("TR").includes(text) || item.ad_soyad.toLocaleUpperCase().includes(textTurkceKarakter)
+                || item.ad_soyad.toLocaleUpperCase().includes(text)
         })
 
         this.setState({
@@ -113,11 +113,11 @@ export default class Program extends Component {
                 }}>
                     <FlatList
                         style = {{flex: 0}}
-                        initialNumToRender={this.state.tumOgrenciler.length}
+                        initialNumToRender={50}
                         directionalLockEnabled={true}
-                        showsVerticalScrollIndicator={false}
+                        showsVerticalScrollIndicator={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.no}
+                        keyExtractor={(item) => item.no + " " + item.bolum}
                         data={this.state.tumOgrenciler}
                         renderItem={({item}) =>  (
                             <TouchableOpacity
@@ -145,8 +145,6 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 15,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
         borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
