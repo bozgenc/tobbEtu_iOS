@@ -80,7 +80,7 @@ export default class Login extends Component {
         return (
             <View style={styles.container}>
                 <Header style={{
-                    height: screen.height * 49 / 100,
+                    height: screen.height * 55 / 100,
                     backgroundColor: 'white',
                     borderBottomWidth: 5,
                     borderBottomColor: '#f18a21'
@@ -89,12 +89,12 @@ export default class Login extends Component {
                         <View style={{
                             justifyContent: 'flex-start',
                             alignItems: 'center',
-                            marginTop: 70,
+                            marginTop: 50,
                         }}>
                             <Image
-                                source={this.state.imageChoose == 0 ? require("../images/bekleme.jpg") : this.state.imageChoose == 1 ? require("../images/bir.jpg") : this.state.imageChoose == 2 ? require("../images/iki.jpg") :
-                                    this.state.imageChoose == 3 ? require("../images/uc.jpg") : this.state.imageChoose == 4 ? require("../images/dort.jpg") : this.state.imageChoose == 5 ? require("../images/bes.jpg") :
-                                        this.state.imageChoose == 6 ? require("../images/alti.jpg") : this.state.imageChoose == 7 ? require("../images/yedi.jpg") : this.state.imageChoose == 8 ? require("../images/sekiz.jpg") : require("../images/dokuz.jpg")
+                                source={this.state.imageChoose == 0 ? require("../images/yeniBekleme.jpg") : this.state.imageChoose == 1 ? require("../images/yeniBir.jpg") : this.state.imageChoose == 2 ? require("../images/yeniIki.jpg") :
+                                    this.state.imageChoose == 3 ? require("../images/yeniUc.jpg") : this.state.imageChoose == 4 ? require("../images/yeniDort.jpg") : this.state.imageChoose == 5 ? require("../images/yeniBes.jpg") :
+                                        this.state.imageChoose == 6 ? require("../images/yeniAlti.jpg") : this.state.imageChoose == 7 ? require("../images/yeniYedi.jpg") : this.state.imageChoose == 8 ? require("../images/yeniSekiz.jpg") : require("../images/yeniDokuz.jpg")
                                 } style={styles.image}/>
                         </View>
 
@@ -129,7 +129,7 @@ export default class Login extends Component {
                     </View>
                 </Header>
 
-                <View style={{justifyContent: 'center', alignItems: 'center', marginTop: screen.height * 34 / 100}}>
+                <View style={{justifyContent: 'center', alignItems: 'center', marginTop: screen.height * 27 / 100}}>
                     <Image source={image} style={styles.imageLogo}/>
                     {/* <Video
                             source = {abcVideo}
@@ -158,14 +158,14 @@ const styles = StyleSheet.create({
         fontFamily: "Helvetica-Bold",
     },
     input: {
-        alignItems: 'flex-start',
+        alignItems: 'center',
         fontFamily: "Helvetica-Bold",
         borderWidth: 2,
         borderColor: '#383838',
         borderRadius: 10,
-        height: 40,
-        marginTop: screen.height / 14,
-        marginLeft: - screen.width / 5,
+        height: 35,
+        marginTop: screen.height / 16,
+        marginLeft: - screen.width / 10,
         width: "140%",
         textAlign: 'left',
     },
@@ -176,15 +176,15 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: '#383838',
         borderRadius: 10,
-        height: 40,
+        height: 35,
         backgroundColor: '#007AFF',
         marginTop: 8,
-        marginLeft: - screen.width / 5,
+        marginLeft: - screen.width / 10,
         fontFamily: "Helvetica-Bold"
     },
     image: {
-        width: 200,
-        height: 200,
+        width: screen.width / 2,
+        height: screen.height / 4,
         resizeMode: 'contain',
     },
     imageLogo: {

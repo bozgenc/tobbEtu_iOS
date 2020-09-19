@@ -43,17 +43,18 @@ export default class Dersler extends Component {
 
                 <View style = {{flex: 1, justifyContent: 'center', alignItems: 'flex-start', marginLeft: 4.3, marginRight: 10, backgroundColor: '#faf8f8'}}>
                     <FlatList
+                        initialNumToRender={30}
                         directionalLockEnabled = {true}
                         showsVerticalScrollIndicator = {false}
                         showsHorizontalScrollIndicator = {false}
-                        keyExtractor={(item) => item.dersKodu}
+                        keyExtractor={(item) => item.dersKodu + " " + item.hangiSube}
                         data = {this.state.dersler}
                         renderItem={({item}) => (
                             <TouchableOpacity
                                 onPress = {() => {console.log(item.ad)}}
                             >
                                 <View flexDirection = "column" style = {styles.arrayItem}>
-                                    <Text style = {styles.textStyle}>{item.dersKodu}</Text>
+                                    <Text style = {styles.textStyle}>{item.dersKodu + "-" + item.hangiSube }</Text>
                                     <Text style = {styles.textStyle2}>{item.ad} </Text>
                                 </View>
                             </TouchableOpacity>
@@ -70,8 +71,6 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
         borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
