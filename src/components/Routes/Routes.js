@@ -23,12 +23,16 @@ import DersDetay from "../Dersler/DersDetay";
 import {createStackNavigator} from "@react-navigation/stack";
 import {createDrawerNavigator} from "@react-navigation/drawer";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import DeviceInfo from 'react-native-device-info';
+
 
 const Stack = createStackNavigator();
 const Drawer =  createDrawerNavigator();
 const Tab = createMaterialTopTabNavigator();
 
 var screen = Dimensions.get('window');
+var deviceModel = DeviceInfo.getModel()
+var deviceModelName = deviceModel == "iPhone SE" || deviceModel == "iPhone 5" || deviceModel == "iPhone 5S" ? "Program" : "Programım"
 
 function MyTabs() {
     return (
@@ -40,7 +44,7 @@ function MyTabs() {
                 style: {marginBottom: -2, height: screen.height / 15}
             }}
         >
-            <Tab.Screen name="Programım" component={Program} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
+            <Tab.Screen name={deviceModelName} component={Program} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
             <Tab.Screen name="Bilgilerim" component={Bilgilerim} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
             <Tab.Screen name="Derslerim" component={DerslerimStack}/>
         </Tab.Navigator>

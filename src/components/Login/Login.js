@@ -6,8 +6,10 @@ import {Header, Left, Right, Footer} from "native-base";
 import Video from "react-native-video";
 import {BallIndicator, BarIndicator, DotIndicator, MaterialIndicator, PacmanIndicator, PulseIndicator, SkypeIndicator, UIActivityIndicator, WaveIndicator,} from 'react-native-indicators';
 import image from "../images/tobblogo.png";
+import DeviceInfo from 'react-native-device-info';
 
 var screen = Dimensions.get('window');
+var deviceModel = DeviceInfo.getModel();
 
 var bool = false;
 var no = "";
@@ -25,15 +27,28 @@ export default class Login extends Component {
 
     componentDidMount = async () => {
         const loginAuth = await AsyncStorage.getItem('ogrenciNo');
-        if(loginAuth !== null) {
-            no = loginAuth;
-            AsyncStorage.setItem("firstTime", "false");
-            this.setState({isLoading: true}, () => {
-                this.props.navigation.navigate('Program');
-            });
+        const loginAwk = await AsyncStorage.getItem('loginAwk');
+        if(loginAwk) {
+            Alert.alert(
+                "Hata ",
+                "Lütfen uygulamayı kapatıp açın!",
+                [
+                    { text: "OK", onPress: () => console.log("Login awkward")}
+                ],
+                { cancelable: false }
+            );
         }
         else {
-            this.setState({isLoading: false})
+            if(loginAuth !== null) {
+                no = loginAuth;
+                AsyncStorage.setItem("firstTime", "false");
+                this.setState({isLoading: true}, () => {
+                    this.props.navigation.navigate('Program');
+                });
+            }
+            else {
+                this.setState({isLoading: false})
+            }
         }
     }
 
@@ -80,7 +95,12 @@ export default class Login extends Component {
         return (
             <View style={styles.container}>
                 <Header style={{
-                    height: screen.height * 55 / 100,
+                    height:
+                        deviceModel == "iPhone 11" || deviceModel == "iPhone XR" ||
+                        deviceModel == "iPhone 11 Pro Max"  || deviceModel == "iPhone XS Max" ? screen.height * 48 / 100 :
+                            deviceModel == "iPhone 8 Plus" || deviceModel == "iPhone 6 Plus" ||
+                            deviceModel == "iPhone 6S Plus" ||deviceModel == "iPhone 7 Plus" ? screen.height * 55 / 100 :
+                                deviceModel == "iPhone X" || deviceModel == "iPhone XS" || deviceModel == "iPhone 11 Pro " ? screen.height * 50 / 100 : screen.height * 60 / 100,
                     backgroundColor: 'white',
                     borderBottomWidth: 5,
                     borderBottomColor: '#f18a21'
@@ -89,13 +109,18 @@ export default class Login extends Component {
                         <View style={{
                             justifyContent: 'flex-start',
                             alignItems: 'center',
-                            marginTop: 50,
+                            marginTop: deviceModel == "iPhone SE" || deviceModel == "iPhone 5" || deviceModel == "iPhone 5S" ? 30 : 50,
                         }}>
                             <Image
                                 source={this.state.imageChoose == 0 ? require("../images/yeniBekleme.jpg") : this.state.imageChoose == 1 ? require("../images/yeniBir.jpg") : this.state.imageChoose == 2 ? require("../images/yeniIki.jpg") :
                                     this.state.imageChoose == 3 ? require("../images/yeniUc.jpg") : this.state.imageChoose == 4 ? require("../images/yeniDort.jpg") : this.state.imageChoose == 5 ? require("../images/yeniBes.jpg") :
                                         this.state.imageChoose == 6 ? require("../images/yeniAlti.jpg") : this.state.imageChoose == 7 ? require("../images/yeniYedi.jpg") : this.state.imageChoose == 8 ? require("../images/yeniSekiz.jpg") : require("../images/yeniDokuz.jpg")
-                                } style={styles.image}/>
+                                } style={
+                                    deviceModel == "iPhone 11" || deviceModel == "iPhone 11 Pro Max"  ||
+                                    deviceModel == "iPhone XS Max" || deviceModel == "iPhone 7 Plus" ||
+                                    deviceModel == "iPhone XS Max" || deviceModel == "iPhone 6 Plus" ||
+                                    deviceModel == "iPhone 6S Plus" ? styles.imageForBiggerDevices :
+                                        deviceModel == "iPhone SE" || deviceModel == "iPhone 5" || deviceModel == "iPhone 5S" ? styles.imageForSmallDevices : styles.image}/>
                         </View>
 
                         <View>
@@ -129,7 +154,14 @@ export default class Login extends Component {
                     </View>
                 </Header>
 
-                <View style={{justifyContent: 'center', alignItems: 'center', marginTop: screen.height * 27 / 100}}>
+                <View style={{
+                    justifyContent: 'center', alignItems: 'center',
+                    marginTop:
+                        deviceModel == "iPhone 11" ||
+                        deviceModel == "iPhone 11 Pro Max"  || deviceModel == "iPhone XS Max" ||
+                        deviceModel == "iPhone 7 Plus" || deviceModel == "iPhone XS Max" ||
+                        deviceModel == "iPhone 6 Plus" || deviceModel == "iPhone 6S Plus" ? screen.height * 32 / 100 : screen.height * 28 / 100
+                }}>
                     <Image source={image} style={styles.imageLogo}/>
                     {/* <Video
                             source = {abcVideo}
@@ -183,8 +215,18 @@ const styles = StyleSheet.create({
         fontFamily: "Helvetica-Bold"
     },
     image: {
-        width: screen.width / 2,
-        height: screen.height / 4,
+        width: 210,
+        height: 210,
+        resizeMode: 'contain',
+    },
+    imageForBiggerDevices: {
+        width: 225,
+        height: 225,
+        resizeMode: 'contain',
+    },
+    imageForSmallDevices: {
+        width: 175,
+        height: 175,
         resizeMode: 'contain',
     },
     imageLogo: {
