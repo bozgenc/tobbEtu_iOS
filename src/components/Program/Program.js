@@ -3,6 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View, Dimensions, Alert, ScrollView}
 import {Header ,Left, Right } from "native-base";
 import veriler from "../Veriler/TumBilgiler";
 import ProgramGenerator from "../Utils/ProgramGenerator";
+import AsyncStorage from "@react-native-community/async-storage";
 
 var screen = Dimensions.get("window");
 
@@ -36,10 +37,13 @@ export default class Program extends Component {
         const data = veriler.getOgrenciBilgisi(this.state.no)
         if(data == null) {
             Alert.alert(
-                "hata ",
-                "öğrenci bulunamadı",
+                "Hata ",
+                "Öğrenci bulunamadı.",
                 [
-                    { text: "OK", onPress: () => this.props.navigation.navigate('Login')}
+                    { text: "OK", onPress: () => {
+                        AsyncStorage.setItem('loginAwk', "true");
+                        this.props.navigation.navigate('Login')}
+                    }
                 ],
                 { cancelable: false }
             );
