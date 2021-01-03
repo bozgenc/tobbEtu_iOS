@@ -25,7 +25,7 @@ export default class OgrenciDetayBilgiler extends Component {
                 "Bilgilendirme",
                 "Ders şube listesi içerisinden bir öğrenci profiline ulaştığınızda sola kaydırarak öğrencinin ders programını görüntüleyebilirsiniz.\n\nAncak aldığı derslerin detaylarını görüntülemek için 'Tüm Öğrenciler' menüsünden öğrenci profiline erişmeniz gerekir.",
                 [
-                    { text: "OK", onPress: () => console.log("İlk bilgilendirme")}
+                    { text: "Tamam", onPress: () => console.log("İlk bilgilendirme")}
                 ],
                 { cancelable: false }
             );

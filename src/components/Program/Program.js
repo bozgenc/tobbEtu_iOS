@@ -40,7 +40,7 @@ export default class Program extends Component {
                 "Hata ",
                 "Öğrenci bulunamadı. Uygulamayı kapatıp açıp yeniden deneyin.",
                 [
-                    { text: "OK", onPress: () => {
+                    { text: "Tamam", onPress: () => {
                         AsyncStorage.setItem('loginAwk', "true");
                         this.props.navigation.navigate('Login')}
                     }

@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {Header, Left, Right, Footer} from "native-base";
 import Video from "react-native-video";
 import {BallIndicator, BarIndicator, DotIndicator, MaterialIndicator, PacmanIndicator, PulseIndicator, SkypeIndicator, UIActivityIndicator, WaveIndicator,} from 'react-native-indicators';
-import image from "../images/tobblogo.png";
+import image from "../images/appLogoAsh.png";
 import DeviceInfo from 'react-native-device-info';
 
 var screen = Dimensions.get('window');
@@ -93,14 +93,14 @@ export default class Login extends Component {
             <View style={styles.container}>
                 <Header style={{
                     height:
-                        deviceModel == "iPhone 11" || deviceModel == "iPhone XR" ||
-                        deviceModel == "iPhone 11 Pro Max"  || deviceModel == "iPhone XS Max" ? screen.height * 48 / 100 :
+                        deviceModel == "iPhone 11" || deviceModel == "iPhone 12" || deviceModel == "iPhone 12 Pro" || deviceModel == "iPhone XR" ||
+                        deviceModel == "iPhone 11 Pro Max" ||  deviceModel == "iPhone 12 Pro Max"  || deviceModel == "iPhone XS Max" ? screen.height * 48 / 100 :
                             deviceModel == "iPhone 8 Plus" || deviceModel == "iPhone 6 Plus" ||
                             deviceModel == "iPhone 6S Plus" ||deviceModel == "iPhone 7 Plus" ? screen.height * 55 / 100 :
                                 deviceModel == "iPhone X" || deviceModel == "iPhone XS" || deviceModel == "iPhone 11 Pro " ? screen.height * 50 / 100 : screen.height * 60 / 100,
                     backgroundColor: 'white',
-                    borderBottomWidth: 5,
-                    borderBottomColor: '#f18a21'
+                    borderBottomWidth: 7,
+                    borderBottomColor: '#292929'
                 }}>
                     <View style={{flexDirection: 'column'}}>
                         <View style={{
@@ -113,8 +113,8 @@ export default class Login extends Component {
                                     this.state.imageChoose == 3 ? require("../images/yeniUc.jpg") : this.state.imageChoose == 4 ? require("../images/yeniDort.jpg") : this.state.imageChoose == 5 ? require("../images/yeniBes.jpg") :
                                         this.state.imageChoose == 6 ? require("../images/yeniAlti.jpg") : this.state.imageChoose == 7 ? require("../images/yeniYedi.jpg") : this.state.imageChoose == 8 ? require("../images/yeniSekiz.jpg") : require("../images/yeniDokuz.jpg")
                                 } style={
-                                    deviceModel == "iPhone 11" || deviceModel == "iPhone 11 Pro Max"  ||
-                                    deviceModel == "iPhone XS Max" || deviceModel == "iPhone 7 Plus" ||
+                                    deviceModel == "iPhone 11" || deviceModel == "iPhone 11 Pro Max"  || deviceModel == "iPhone 12" || deviceModel == "iPhone 12 Pro" ||
+                                    deviceModel == "iPhone XS Max" || deviceModel == "iPhone 12 Pro Max"  || deviceModel == "iPhone 7 Plus" ||
                                     deviceModel == "iPhone XS Max" || deviceModel == "iPhone 6 Plus" ||
                                     deviceModel == "iPhone 6S Plus" ? styles.imageForBiggerDevices :
                                         deviceModel == "iPhone SE" || deviceModel == "iPhone 5" || deviceModel == "iPhone 5S" ? styles.imageForSmallDevices : styles.image}/>
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: "#000",
+        backgroundColor: "#4d738d",
     },
     text: {
         fontSize: 40,
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
         borderColor: '#383838',
         borderRadius: 10,
         height: 35,
-        backgroundColor: '#007AFF',
+        backgroundColor: '#4d738d',
         marginTop: 8,
         marginLeft: - screen.width / 10,
         fontFamily: "Helvetica-Bold"
@@ -227,8 +227,9 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     imageLogo: {
-        width: 100,
-        height: 100,
+        width: 75,
+        height: 75,
         resizeMode: 'contain',
+        marginTop: 40,
     }
 });
