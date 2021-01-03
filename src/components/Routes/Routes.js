@@ -9,7 +9,9 @@ import Dersler from "../Dersler/Dersler";
 import Servisler from "../Servisler/Servisler";
 import Vizeler from "../VizeFinaller/Vizeler";
 import Finaller from "../VizeFinaller/Finaller";
-import AkademikKadro from "../AkademikKadro/AkademikKadro";
+import Lisans from "../AkademikTakvim/Lisans";
+import YuksekLisans from "../AkademikTakvim/YuksekLisans";
+import MedicineFaculty from "../AkademikTakvim/MedicineFaculty";
 import BosDerslikler from "../BosDerslikler/BosDerslikler";
 import Derslerim from "../Derslerim/Derslerim";
 import Ringler from "../Servisler/Ringler";
@@ -47,6 +49,23 @@ function MyTabs() {
             <Tab.Screen name={deviceModelName} component={Program} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
             <Tab.Screen name="Bilgilerim" component={Bilgilerim} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
             <Tab.Screen name="Derslerim" component={DerslerimStack}/>
+        </Tab.Navigator>
+    );
+}
+
+function AkademikTakvimTab() {
+    return (
+        <Tab.Navigator
+            initialRouteName={"Lisans"}
+            lazy = {true}
+            tabBarPosition='bottom'
+            tabBarOptions={{
+                style: {marginBottom: -2, height: screen.height / 15}
+            }}
+        >
+            <Tab.Screen name="Lisans" component={Lisans}/>
+            <Tab.Screen name="Lisansüstü" component={YuksekLisans}/>
+            <Tab.Screen name="Tıp Fakültesi" component={MedicineFaculty}/>
         </Tab.Navigator>
     );
 }
@@ -200,7 +219,7 @@ function Home() {
             <Drawer.Screen name="Öğrenciler" component={OgrencilerStack} />
             <Drawer.Screen name="Dersler" component={Dersler} />
             <Drawer.Screen name="Boş Derslikler" component={BosDerslikler} />
-            <Drawer.Screen name="Akademik Takvim" component={AkademikKadro} />
+            <Drawer.Screen name="Akademik Takvim" component={AkademikTakvimTab} />
             <Drawer.Screen name="Servisler" component={ServislerTab} />
             <Drawer.Screen name="Vizeler" component={Vizeler} />
             <Drawer.Screen name="Finaller" component={Finaller} />
