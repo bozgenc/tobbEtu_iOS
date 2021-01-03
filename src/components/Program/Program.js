@@ -38,7 +38,7 @@ export default class Program extends Component {
         if(data == null) {
             Alert.alert(
                 "Hata ",
-                "Öğrenci bulunamadı.",
+                "Öğrenci bulunamadı. Uygulamayı kapatıp açıp yeniden deneyin.",
                 [
                     { text: "OK", onPress: () => {
                         AsyncStorage.setItem('loginAwk', "true");

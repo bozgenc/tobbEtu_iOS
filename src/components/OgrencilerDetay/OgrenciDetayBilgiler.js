@@ -10,6 +10,7 @@ export default class OgrenciDetayBilgiler extends Component {
         super(props);
         this.state = {
             selectedKisi: props.route.params.selectedKisi,
+            comingFrom: props.route.params.comingFromDersList,
         }
     }
 
@@ -22,7 +23,7 @@ export default class OgrenciDetayBilgiler extends Component {
             AsyncStorage.setItem("comingFromDersListesi", "false");
             Alert.alert(
                 "Bilgilendirme",
-                "Ders listesi içerisinden bir öğrenci profiline ulaştığınızda sağa kaydırarak öğrencinin ders programını görüntüleyebilirsiniz.\n\nAncak aldığı derslerin detaylarını görüntülemek için 'Tüm Öğrenciler' menüsünden öğrenci profiline erişmeniz gerekir.",
+                "Ders şube listesi içerisinden bir öğrenci profiline ulaştığınızda sola kaydırarak öğrencinin ders programını görüntüleyebilirsiniz.\n\nAncak aldığı derslerin detaylarını görüntülemek için 'Tüm Öğrenciler' menüsünden öğrenci profiline erişmeniz gerekir.",
                 [
                     { text: "OK", onPress: () => console.log("İlk bilgilendirme")}
                 ],
@@ -39,12 +40,15 @@ export default class OgrenciDetayBilgiler extends Component {
                         <Left>
                             <TouchableOpacity
                                 onPress={() => {
-                                    this.props.navigation.popToTop();
+                                    if(this.state.comingFrom)
+                                        this.props.navigation.goBack();
+                                    else
+                                        this.props.navigation.popToTop();
                                 }}
                                 style={{color: "black" }}
                             >
-                                <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    {"<"}
+                                <Text style = {{marginLeft: 10, fontSize: 45, color: '#B00D23'}}>
+                                    {"‹"}
                                 </Text>
                             </TouchableOpacity>
                         </Left>

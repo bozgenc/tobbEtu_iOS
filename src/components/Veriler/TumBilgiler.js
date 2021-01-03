@@ -41,6 +41,7 @@ class TumBilgiler extends Component{
                 ad: item.ad,
                 dersKodu: item.dersKodu,
                 hangiSube: item.hangi_sube,
+                hoca_adi: item.hoca_adi,
             };
         });
 

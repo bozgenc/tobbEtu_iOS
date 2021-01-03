@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Alert, Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Header, Left, Right} from "native-base";
 import ogrenciler from '../Veriler/ogrenciler.json'
 import OgrenciDetayBilgiler from "../OgrencilerDetay/OgrenciDetayBilgiler";
 import {SearchBar} from "react-native-elements";
+import AsyncStorage from "@react-native-community/async-storage";
 
 var screen = Dimensions.get('window');
 var selectedKisi = {
@@ -26,7 +27,19 @@ export default class Program extends Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount = async () => {
+        var firstTimeOgrenciler = await AsyncStorage.getItem("dersler");
+        if(firstTimeOgrenciler == "true") {
+            AsyncStorage.setItem("ogrenciler", "false");
+            Alert.alert(
+                "Bilgilendirme",
+                "Arama yaparken  öğrenci adı, bölüm ya da öğrenci numarasını kullanabilirsiniz.",
+                [
+                    { text: "Tamam", onPress: () => console.log("Öğrenci listesi bilgilendirme")}
+                ],
+                { cancelable: false }
+            );
+        }
         var jsonData = ogrenciler;
         var ogrencilerList = jsonData.ogrenciler.map(function(item) {
             return {

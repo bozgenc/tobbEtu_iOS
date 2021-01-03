@@ -11,6 +11,7 @@ export default class OgrenciDetayProgram extends Component {
         this.state = {
             selectedKisi: props.route.params.selectedKisi,
             aldigiDersler: props.route.params.selectedKisi.aldigiDersler,
+            comingFrom: props.route.params.comingFromDersList,
             table: this.createArray(),
             ad: "",
             soyad: "",
@@ -64,11 +65,16 @@ export default class OgrenciDetayProgram extends Component {
                     <Header style = {{backgroundColor: 'white'}} >
                         <Left>
                             <TouchableOpacity
-                                onPress={() => this.props.navigation.popToTop()}
+                                onPress={() => {
+                                    if(this.state.comingFrom)
+                                        this.props.navigation.navigate('DersDetayNew');
+                                    else
+                                        this.props.navigation.popToTop()
+                                }}
                                 style={{color: "black" }}
                             >
-                                <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    {"<"}
+                                <Text style = {{marginLeft: 10, fontSize: 45, color: '#B00D23'}}>
+                                    {"‹"}
                                 </Text>
                             </TouchableOpacity>
                         </Left>

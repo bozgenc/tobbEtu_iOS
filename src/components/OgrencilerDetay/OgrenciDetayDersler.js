@@ -47,8 +47,8 @@ export default class OgrenciDetayDersler extends Component {
                                 }}
                                 style={{color: "black" }}
                             >
-                                <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    {"<"}
+                                <Text style = {{marginLeft: 10, fontSize: 45, color: '#B00D23'}}>
+                                    {"‹"}
                                 </Text>
                             </TouchableOpacity>
                         </Left>

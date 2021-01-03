@@ -28,21 +28,13 @@ export default class Login extends Component {
     componentDidMount = async () => {
         const loginAuth = await AsyncStorage.getItem('ogrenciNo');
         const loginAwk = await AsyncStorage.getItem('loginAwk');
-        if(loginAwk) {
-            Alert.alert(
-                "Hata ",
-                "Lütfen uygulamayı kapatıp açın!",
-                [
-                    { text: "OK", onPress: () => console.log("Login awkward")}
-                ],
-                { cancelable: false }
-            );
+        if(loginAwk == "true") {
+            this.setState({isLoading: false});
         }
         else {
             if(loginAuth !== null) {
                 no = loginAuth;
-                AsyncStorage.setItem("firstTime", "false");
-                AsyncStorage.setItem('akademikTakvim', "false");
+                AsyncStorage.setItem('loginAwk', "false");
                 this.setState({isLoading: true}, () => {
                     this.props.navigation.navigate('Program');
                 });
@@ -58,7 +50,10 @@ export default class Login extends Component {
             this.setState({isLoading: true}, () => {
                 AsyncStorage.setItem('ogrenciNo', no);
                 AsyncStorage.setItem('akademikTakvim', "true");
-                AsyncStorage.setItem('firstTime', "true");
+                AsyncStorage.setItem('firstTime', "true")
+                AsyncStorage.setItem("ogrenciler", "true");
+                AsyncStorage.setItem("dersler", "true");
+                AsyncStorage.setItem('loginAwk', "false");
                 this.props.navigation.navigate('Program');
             })
         }

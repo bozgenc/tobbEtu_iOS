@@ -114,7 +114,7 @@ export default class MedicineFaculty extends Component {
 
     render() {
         return (
-            <View style = {{flex: 1}}>
+            <View style = {{flex: 1,  backgroundColor: '#efebeb',}}>
                 <View>
                     <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>

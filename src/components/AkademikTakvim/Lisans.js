@@ -20,7 +20,7 @@ export default class Lisans extends Component {
     componentDidMount = async () => {
         var firstTimeAkademik = await AsyncStorage.getItem("akademikTakvim");
         if(firstTimeAkademik == "true") {
-            AsyncStorage.setItem("firstTimeAkademik", "false");
+            AsyncStorage.setItem("akademikTakvim", "false");
             Alert.alert(
                 "Bilgilendirme",
                 "Arama yaparken  Eylül, Ekim gibi ay isimlerini\n ya da TOEFL, Ekle Sil gibi anahtar kelimeleri kullanabilirsiniz.",
@@ -124,7 +124,7 @@ export default class Lisans extends Component {
 
     render() {
         return (
-            <View style = {{flex: 1}}>
+            <View style = {{flex: 1,  backgroundColor: '#efebeb',}}>
                 <View>
                     <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>

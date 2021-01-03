@@ -21,6 +21,7 @@ import OgrenciDetayProgram from "../OgrencilerDetay/OgrenciDetayProgram";
 import OgrenciDetayDersler from "../OgrencilerDetay/OgrenciDetayDersler";
 import OgrenciDetayBilgiler from "../OgrencilerDetay/OgrenciDetayBilgiler";
 import DersDetay from "../Dersler/DersDetay";
+import DersDetayNew from "../Dersler/DersDetayNew"
 
 import {createStackNavigator} from "@react-navigation/stack";
 import {createDrawerNavigator} from "@react-navigation/drawer";
@@ -206,6 +207,37 @@ function ServislerTab() {
     );
 }
 
+function DerslerListStack() {
+    return(
+        <Stack.Navigator
+            mode = "modal"
+            lazy = {true}
+            screenOptions={{
+                headerShown: false
+            }}
+        >
+            <Stack.Screen name="Dersler" component={Dersler}/>
+            <Stack.Screen name="DersDetayNew" component={DersDetayNew} initialParams={{selectedDers: Dersler.passSelectedDers()}}/>
+            <Stack.Screen name="OgrenciDetayBilgiler" component={OgrencilerTwoTab}/>
+        </Stack.Navigator>
+    );
+}
+
+function OgrencilerTwoTab() {
+    return (
+        <Tab.Navigator
+            lazy = {true}
+            tabBarPosition='bottom'
+            tabBarOptions={{
+                style: {marginBottom: -4, height: 0},
+            }}
+        >
+            <Tab.Screen name="Bilgiler" component={OgrenciDetayBilgiler} initialParams={{selectedKisi: DersDetayNew.passSelectedKisi(), comingFromDersList: true}} />
+            <Tab.Screen name="Program" component={OgrenciDetayProgram} initialParams={{selectedKisi: DersDetayNew.passSelectedKisi(), comingFromDersList: true}}/>
+        </Tab.Navigator>
+    );
+}
+
 function Home() {
     return (
         <Drawer.Navigator
@@ -217,7 +249,7 @@ function Home() {
         >
             <Drawer.Screen name="Ana Sayfa" component={MyTabs}/>
             <Drawer.Screen name="Öğrenciler" component={OgrencilerStack} />
-            <Drawer.Screen name="Dersler" component={Dersler} />
+            <Drawer.Screen name="Dersler" component={DerslerListStack} />
             <Drawer.Screen name="Boş Derslikler" component={BosDerslikler} />
             <Drawer.Screen name="Akademik Takvim" component={AkademikTakvimTab} />
             <Drawer.Screen name="Servisler" component={ServislerTab} />
