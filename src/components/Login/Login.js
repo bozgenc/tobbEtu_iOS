@@ -42,6 +42,7 @@ export default class Login extends Component {
             if(loginAuth !== null) {
                 no = loginAuth;
                 AsyncStorage.setItem("firstTime", "false");
+                AsyncStorage.setItem('akademikTakvim', "false");
                 this.setState({isLoading: true}, () => {
                     this.props.navigation.navigate('Program');
                 });
@@ -56,6 +57,7 @@ export default class Login extends Component {
         if(bool) {
             this.setState({isLoading: true}, () => {
                 AsyncStorage.setItem('ogrenciNo', no);
+                AsyncStorage.setItem('akademikTakvim', "true");
                 AsyncStorage.setItem('firstTime', "true");
                 this.props.navigation.navigate('Program');
             })
