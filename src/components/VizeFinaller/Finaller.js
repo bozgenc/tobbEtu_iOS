@@ -5,7 +5,7 @@ import {Header, Left, Right} from "native-base";
 export default class Finaller extends Component {
     render() {
         return (
-            <View style = {{flex: 1}}>
+            <View style = {{flex: 1, backgroundColor: '#efebeb'}}>
                 <View>
                     <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
@@ -26,9 +26,9 @@ export default class Finaller extends Component {
                     </Header>
                 </View>
 
-                <View style = {{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                    <Text style = {{justifyContent: 'center', alignItems: 'center'}}>
-                        FİNALLER
+                <View style = {{flex: 1, justifyContent: 'flex-start', alignItems: 'center'}}>
+                    <Text style = {{justifyContent: 'center', alignItems: 'flex-start', fontSize: 17, marginTop: 20, fontFamily: 'HelveticaNeue-Medium'}}>
+                        Şimdilik burası boş ama final takvimi yayınlanınca güncellenecek.
                     </Text>
                 </View>
             </View>

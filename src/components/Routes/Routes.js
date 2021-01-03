@@ -253,7 +253,7 @@ function Home() {
             <Drawer.Screen name="Boş Derslikler" component={BosDerslikler} />
             <Drawer.Screen name="Akademik Takvim" component={AkademikTakvimTab} />
             <Drawer.Screen name="Servisler" component={ServislerTab} />
-            <Drawer.Screen name="Vizeler" component={Vizeler} />
+            <Drawer.Screen name="Arasınavlar" component={Vizeler} />
             <Drawer.Screen name="Finaller" component={Finaller} />
         </Drawer.Navigator>
     );

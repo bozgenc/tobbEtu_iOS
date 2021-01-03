@@ -5,7 +5,7 @@ import {Header, Left, Right} from "native-base";
 export default class BosDerslikler extends Component {
     render() {
         return (
-            <View style = {{flex: 1}}>
+            <View style = {{flex: 1, backgroundColor: '#efebeb'}}>
                 <View>
                     <Header style = {{backgroundColor: 'white', borderBottomWidth: 2, borderBottomColor: '#f18a21'}} >
                         <Left>
@@ -26,9 +26,15 @@ export default class BosDerslikler extends Component {
                     </Header>
                 </View>
 
-                <View style = {{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                    <Text style = {{justifyContent: 'center', alignItems: 'center'}}>
-                        BOŞ DERSLİKLER
+                <View style = {{flex: 1, justifyContent: 'flex-start', alignItems: 'center', marginLeft: 3, marginRight: 3}}>
+                    <Text style = {{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        fontSize: 15.5,
+                        marginTop: 20,
+                        fontFamily: 'HelveticaNeue-Medium'
+                    }}>
+                        Şimdilik burası boş ama okullar açılınca güncellenecek.
                     </Text>
                 </View>
             </View>
