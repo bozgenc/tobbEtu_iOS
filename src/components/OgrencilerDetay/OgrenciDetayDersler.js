@@ -22,6 +22,16 @@ export default class OgrenciDetayDersler extends Component {
     }
 
     componentDidMount() {
+       var temp = this.state.dersler;
+        temp.sort(function(a, b) {
+            if(a.routes) return -1;
+            if(b.routes) return 1;
+            if(a.dersKodu.toLowerCase() < b.dersKodu.toLowerCase()) return -1;
+            if(a.dersKodu.toLowerCase() > b.dersKodu.toLowerCase()) return 1;
+            return 0;
+        });
+
+        this.setState({dersler: temp});
     }
 
     setDersBilgisi = (item) => {

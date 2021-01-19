@@ -22,6 +22,8 @@ import OgrenciDetayDersler from "../OgrencilerDetay/OgrenciDetayDersler";
 import OgrenciDetayBilgiler from "../OgrencilerDetay/OgrenciDetayBilgiler";
 import DersDetay from "../Dersler/DersDetay";
 import DersDetayNew from "../Dersler/DersDetayNew"
+import HizliErisim from "../Derslerim/HizliErisim"
+import ArkadasEkle from "../Dersler/ArkadasEkle";
 
 import {createStackNavigator} from "@react-navigation/stack";
 import {createDrawerNavigator} from "@react-navigation/drawer";
@@ -35,7 +37,7 @@ const Tab = createMaterialTopTabNavigator();
 
 var screen = Dimensions.get('window');
 var deviceModel = DeviceInfo.getModel()
-var deviceModelName = deviceModel == "iPhone SE" || deviceModel == "iPhone 5" || deviceModel == "iPhone 5S" ? "Program" : "Programım"
+var deviceModelName = deviceModel == "iPhone SE" || deviceModel == "iPhone 5" || deviceModel == "iPhone 5S" ? "Program" : "Program"
 
 function MyTabs() {
     return (
@@ -48,8 +50,41 @@ function MyTabs() {
             }}
         >
             <Tab.Screen name={deviceModelName} component={Program} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
-            <Tab.Screen name="Bilgilerim" component={Bilgilerim} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
-            <Tab.Screen name="Derslerim" component={DerslerimStack}/>
+            <Tab.Screen name="Bilgiler" component={Bilgilerim} initialParams={{ogrenciNo: Login.passOgrenciNo()}}/>
+            <Tab.Screen name="Dersler" component={DerslerimStack}/>
+            <Tab.Screen name="Fav." component={HizliErisimStack}/>
+
+        </Tab.Navigator>
+    );
+}
+
+function HizliErisimStack() {
+    return(
+        <Stack.Navigator
+            mode = "modal"
+            lazy = {true}
+            screenOptions={{
+                headerShown: false
+            }}
+        >
+            <Stack.Screen name="Fav." component={HizliErisim}/>
+            <Stack.Screen name="OgrenciDetayBilgiler" component={HizliErisimTab}/>
+            <Stack.Screen name="ArkadasEkle" component={ArkadasEkle}/>
+        </Stack.Navigator>
+    );
+}
+
+function HizliErisimTab(){
+    return (
+        <Tab.Navigator
+            lazy = {true}
+            tabBarPosition='bottom'
+            tabBarOptions={{
+                style: {marginBottom: -2, height: 0}
+            }}
+        >
+            <Tab.Screen name="OgrenciDetayBilgiler" component={OgrenciDetayBilgiler} initialParams={{selectedKisi: HizliErisim.passSelectedKisi()}} />
+            <Tab.Screen name="OgrenciDetayProgram" component={OgrenciDetayProgram} initialParams={{selectedKisi: HizliErisim.passSelectedKisi()}}/>
         </Tab.Navigator>
     );
 }

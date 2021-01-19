@@ -54,6 +54,8 @@ export default class Login extends Component {
                 AsyncStorage.setItem("ogrenciler", "true");
                 AsyncStorage.setItem("dersler", "true");
                 AsyncStorage.setItem('loginAwk', "false");
+                AsyncStorage.setItem("firstTimeFavList", "true");
+                AsyncStorage.setItem("tekSeferKayit", "true");
                 this.props.navigation.navigate('Program');
             })
         }
@@ -160,11 +162,6 @@ export default class Login extends Component {
                         deviceModel == "iPhone 6 Plus" || deviceModel == "iPhone 6S Plus" ? screen.height * 32 / 100 : screen.height * 28 / 100
                 }}>
                     <Image source={image} style={styles.imageLogo}/>
-                    {/* <Video
-                            source = {abcVideo}
-                            resizeMode = 'cover'
-                            style = {{height: 500, width: screen.width}}
-                        />*/}
                 </View>
             </View>
         );
