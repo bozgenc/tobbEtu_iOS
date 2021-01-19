@@ -35,11 +35,18 @@ export default class Derslerim extends Component {
 
     componentDidMount() {
         const data = veriler.getOgrenciBilgisi(this.state.no)
+        var temp = data.aldigiDersler.sort(function(a, b) {
+            if(a.routes) return -1;
+            if(b.routes) return 1;
+            if(a.dersKodu.toLowerCase() < b.dersKodu.toLowerCase()) return -1;
+            if(a.dersKodu.toLowerCase() > b.dersKodu.toLowerCase()) return 1;
+            return 0;
+        });
         this.setState({
             ad_soyad: data.ad_soyad,
             bolum: data.bolum,
             sinif: data.sinif,
-            aldigiDersler: data.aldigiDersler,
+            aldigiDersler: temp,
             ad: data.ad_soyad.substring(0, data.ad_soyad.lastIndexOf(" ")),
             soyad: data.ad_soyad.substring(data.ad_soyad.lastIndexOf(" ") + 1),
         })

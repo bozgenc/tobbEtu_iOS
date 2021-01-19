@@ -17,13 +17,14 @@ export default class OgrenciDetayBilgiler extends Component {
      componentDidMount = async () => {
         var firstTime = await AsyncStorage.getItem("firstTime");
         var comingFrom = await AsyncStorage.getItem("comingFromDersListesi");
-
-        if( firstTime == "true" &&  comingFrom == "true") {
+        var comingFromFavList = await AsyncStorage.getItem("comingFromFavList");
+        if( firstTime == "true" &&  (comingFrom == "true" || comingFromFavList == "true")) {
             AsyncStorage.setItem("firstTime", "false");
             AsyncStorage.setItem("comingFromDersListesi", "false");
+            AsyncStorage.setItem("comingFromFavList", "false");
             Alert.alert(
                 "Bilgilendirme",
-                "Ders şube listesi içerisinden bir öğrenci profiline ulaştığınızda sola kaydırarak öğrencinin ders programını görüntüleyebilirsiniz.\n\nAncak aldığı derslerin detaylarını görüntülemek için 'Tüm Öğrenciler' menüsünden öğrenci profiline erişmeniz gerekir.",
+                "Ders şube listesi içerisinden ya da Arkadaşlar listesinden bir öğrenci profiline ulaştığınızda sola kaydırarak öğrencinin ders programını görüntüleyebilirsiniz.\n\nAncak aldığı derslerin detaylarını görüntülemek için 'Tüm Öğrenciler' menüsünden öğrenci profiline erişmeniz gerekir.",
                 [
                     { text: "Tamam", onPress: () => console.log("İlk bilgilendirme")}
                 ],

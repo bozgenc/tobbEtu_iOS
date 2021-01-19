@@ -28,7 +28,7 @@ export default class Program extends Component {
     }
 
     componentDidMount = async () => {
-        var firstTimeOgrenciler = await AsyncStorage.getItem("dersler");
+        var firstTimeOgrenciler = await AsyncStorage.getItem("ogrenciler");
         if(firstTimeOgrenciler == "true") {
             AsyncStorage.setItem("ogrenciler", "false");
             Alert.alert(
