@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import {Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Alert, Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Header, Left, Right} from "native-base";
 import ogrenciler from '../Veriler/ogrenciler.json'
 import OgrenciDetayBilgiler from "../OgrencilerDetay/OgrenciDetayBilgiler";
+import {SearchBar} from "react-native-elements";
+import AsyncStorage from "@react-native-community/async-storage";
 
 var screen = Dimensions.get('window');
 var selectedKisi = {
@@ -18,11 +20,26 @@ export default class Program extends Component {
         super(props);
         this.state = {
             tumOgrenciler: [],
+            tumOgrencilerBackup: [],
             progressPermission: false,
+            searchingfor: "",
+            filtered: "",
         }
     }
 
-    componentDidMount() {
+    componentDidMount = async () => {
+        var firstTimeOgrenciler = await AsyncStorage.getItem("ogrenciler");
+        if(firstTimeOgrenciler == "true") {
+            AsyncStorage.setItem("ogrenciler", "false");
+            Alert.alert(
+                "Bilgilendirme",
+                "Arama yaparken  öğrenci adı, bölüm ya da öğrenci numarasını kullanabilirsiniz.",
+                [
+                    { text: "Tamam", onPress: () => console.log("Öğrenci listesi bilgilendirme")}
+                ],
+                { cancelable: false }
+            );
+        }
         var jsonData = ogrenciler;
         var ogrencilerList = jsonData.ogrenciler.map(function(item) {
             return {
@@ -34,7 +51,7 @@ export default class Program extends Component {
             };
         });
 
-        this.setState({tumOgrenciler: ogrencilerList})
+        this.setState({tumOgrenciler: ogrencilerList, tumOgrencilerBackup: ogrencilerList})
     }
 
     setData = (item) => {
@@ -47,6 +64,21 @@ export default class Program extends Component {
 
     static passSelectedKisi(){
         return selectedKisi;
+    }
+
+    onFilter = (text) => {
+        this.setState({searchingFor: text})
+        text = text.toLocaleUpperCase("TR");
+        var textTurkceKarakter = text.replace(/s/g, "ş").replace(/i/g, "ı").replace(/c/g, "ç").replace(/u/g, "ü").replace(/g/g, "ğ").replace(/o/g, "ö");
+
+        let updatedList = this.state.tumOgrencilerBackup.filter(function(item) {
+            return item.ad_soyad.replace("İ", "I").toLocaleUpperCase().includes(text) || item.no.includes(text) || item.bolum.toLocaleUpperCase("TR").includes(text) || item.ad_soyad.toLocaleUpperCase().includes(textTurkceKarakter)
+                || item.ad_soyad.toLocaleUpperCase().includes(text)
+        })
+
+        this.setState({
+            tumOgrenciler: updatedList
+        })
     }
 
     render() {
@@ -72,14 +104,35 @@ export default class Program extends Component {
                     </Header>
                 </View>
 
-                <View style = {{flex: 1, justifyContent: 'center', alignItems: 'flex-start', marginLeft: 4.3, marginRight: 10, backgroundColor: '#faf8f8'}}>
+                <SearchBar placeholder=" Öğrenci Ara... " lightTheme round
+                           containerStyle={{backgroundColor: '#faf8f8', width: screen.width, marginRight: 20}}
+                           inputContainerStyle={{backgroundColor: '#e3dddd',}}
+                           value={this.state.searchingFor}
+                           onChangeText={(text) => {
+                               this.onFilter(text);
+                           }}
+                           autoCorrect={false}
+                />
+
+                <View style = {{
+                    flex: 1,
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    marginLeft: 4.3,
+                    marginRight: 10,
+                    height: screen.height,
+                    backgroundColor: '#faf8f8'
+                }}>
                     <FlatList
+                        style = {{flex: 0}}
+                        initialNumToRender={50}
                         directionalLockEnabled={true}
-                        showsVerticalScrollIndicator={false}
+                        showsVerticalScrollIndicator={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.no}
+                        keyExtractor={(item) => item.no + " " + item.bolum}
                         data={this.state.tumOgrenciler}
-                        renderItem={({item}) => (
+                        renderItem={({item}) =>  (
                             <TouchableOpacity
                                 onPress={() => {
                                     this.setData(item);
@@ -105,9 +158,7 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 15,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
-        borderRadius: 5,
+        borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
     },

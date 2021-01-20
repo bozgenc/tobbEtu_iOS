@@ -39,7 +39,9 @@ class TumBilgiler extends Component{
         var derslerList = jsonData.dersler.map(function(item) {
             return {
                 ad: item.ad,
-                dersKodu: item.dersKodu
+                dersKodu: item.dersKodu,
+                hangiSube: item.hangi_sube,
+                hoca_adi: item.hoca_adi,
             };
         });
 
@@ -57,13 +59,11 @@ class TumBilgiler extends Component{
                 hoca_adi: item.hoca_adi,
             };
         });
-
         let dataToReturn = null;
         for(var i = 0; i < derslerList.length; i++) {
             if(derslerList[i].dersKodu == id)
                 dataToReturn = derslerList[i];
         }
-
         return dataToReturn;
     }
 }

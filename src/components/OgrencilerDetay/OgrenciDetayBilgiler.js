@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {StyleSheet, Dimensions, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Dimensions, Text, TouchableOpacity, View, Alert,} from 'react-native';
 import {Header, Left, Right} from "native-base";
+import AsyncStorage from '@react-native-community/async-storage';
 
 var screen = Dimensions.get('window');
 
@@ -9,10 +10,27 @@ export default class OgrenciDetayBilgiler extends Component {
         super(props);
         this.state = {
             selectedKisi: props.route.params.selectedKisi,
+            comingFrom: props.route.params.comingFromDersList,
         }
     }
 
-    componentDidMount() {
+     componentDidMount = async () => {
+        var firstTime = await AsyncStorage.getItem("firstTime");
+        var comingFrom = await AsyncStorage.getItem("comingFromDersListesi");
+        var comingFromFavList = await AsyncStorage.getItem("comingFromFavList");
+        if( firstTime == "true" &&  (comingFrom == "true" || comingFromFavList == "true")) {
+            AsyncStorage.setItem("firstTime", "false");
+            AsyncStorage.setItem("comingFromDersListesi", "false");
+            AsyncStorage.setItem("comingFromFavList", "false");
+            Alert.alert(
+                "Bilgilendirme",
+                "Ders şube listesi içerisinden ya da Arkadaşlar listesinden bir öğrenci profiline ulaştığınızda sola kaydırarak öğrencinin ders programını görüntüleyebilirsiniz.\n\nAncak aldığı derslerin detaylarını görüntülemek için 'Tüm Öğrenciler' menüsünden öğrenci profiline erişmeniz gerekir.",
+                [
+                    { text: "Tamam", onPress: () => console.log("İlk bilgilendirme")}
+                ],
+                { cancelable: false }
+            );
+        }
     }
 
     render() {
@@ -23,17 +41,20 @@ export default class OgrenciDetayBilgiler extends Component {
                         <Left>
                             <TouchableOpacity
                                 onPress={() => {
-                                    this.props.navigation.popToTop();
+                                    if(this.state.comingFrom)
+                                        this.props.navigation.goBack();
+                                    else
+                                        this.props.navigation.popToTop();
                                 }}
                                 style={{color: "black" }}
                             >
-                                <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    {"<"}
+                                <Text style = {{marginLeft: 10, fontSize: 45, color: '#B00D23'}}>
+                                    {"‹"}
                                 </Text>
                             </TouchableOpacity>
                         </Left>
 
-                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Profil</Text>
+                        <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Bilgiler</Text>
 
                         <Right>
                         </Right>
@@ -88,9 +109,7 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
-        borderRadius: 5,
+        borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
     },
@@ -99,9 +118,7 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
-        borderRadius: 5,
+        borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
     },

@@ -16,7 +16,7 @@ var selectedKisi = {
     hocaAdi: "",
 }
 
-export default class DersDetay extends Component {
+export default class DersDetayNew extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +33,7 @@ export default class DersDetay extends Component {
     }
 
     componentDidMount() {
-        AsyncStorage.setItem("comingFromDersListesi", "true");
+        //AsyncStorage.setItem("comingFromDersListesi", "true");
         let ders = veriler.getDers(this.state.selectedDers.dersKodu);
         var ogrenciListesiOnlyNumber = [];
         var temp = ders.ogrenciList;
@@ -155,9 +155,7 @@ export default class DersDetay extends Component {
                                     onPress={() => this.setState({showOgrenci: false})}
                                 >
                                     <View>
-                                        <Text style={{fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}> Bilgilere Dön </Text>
-                                        <Text style={{fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}> {this.state.selectedDers.dersKodu} </Text>
-
+                                        <Text style={{fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}> Bilgilere Dön  </Text>
                                     </View>
                                 </TouchableOpacity>
                             </Right>

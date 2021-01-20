@@ -62,9 +62,12 @@ export default class Cumartesi extends Component {
                     alignItems: 'flex-start',
                     marginLeft: 4.3,
                     marginRight: 10,
+                    height: screen.height,
                     backgroundColor: '#faf8f8'}}
                 >
                     <FlatList
+                        style = {{flex: 0}}
+                        initialNumToRender={this.state.dataArray.length}
                         directionalLockEnabled = {true}
                         showsVerticalScrollIndicator = {false}
                         showsHorizontalScrollIndicator = {false}
@@ -87,9 +90,7 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 8,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
-        borderRadius: 5,
+        borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
     },

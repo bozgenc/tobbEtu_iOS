@@ -27,7 +27,6 @@ export default class Derslerim extends Component {
                 hangiSube: 0,
                 baslamaSaati: [" , , , ", ", , ,"]
             }],
-            table: this.createArray(),
             ad: "",
             soyad: "",
             progressPermission: false,
@@ -36,26 +35,21 @@ export default class Derslerim extends Component {
 
     componentDidMount() {
         const data = veriler.getOgrenciBilgisi(this.state.no)
-        if(data == null) {
-            Alert.alert(
-                "hata ",
-                "öğrenci bulunamadı",
-                [
-                    { text: "OK", onPress: () => this.props.navigation.navigate('Login')}
-                ],
-                { cancelable: false }
-            );
-        }
-        else {
-            this.setState({
-                ad_soyad: data.ad_soyad,
-                bolum: data.bolum,
-                sinif: data.sinif,
-                aldigiDersler: data.aldigiDersler,
-                ad: data.ad_soyad.substring(0, data.ad_soyad.lastIndexOf(" ")),
-                soyad: data.ad_soyad.substring(data.ad_soyad.lastIndexOf(" ") + 1),
-            })
-        }
+        var temp = data.aldigiDersler.sort(function(a, b) {
+            if(a.routes) return -1;
+            if(b.routes) return 1;
+            if(a.dersKodu.toLowerCase() < b.dersKodu.toLowerCase()) return -1;
+            if(a.dersKodu.toLowerCase() > b.dersKodu.toLowerCase()) return 1;
+            return 0;
+        });
+        this.setState({
+            ad_soyad: data.ad_soyad,
+            bolum: data.bolum,
+            sinif: data.sinif,
+            aldigiDersler: temp,
+            ad: data.ad_soyad.substring(0, data.ad_soyad.lastIndexOf(" ")),
+            soyad: data.ad_soyad.substring(data.ad_soyad.lastIndexOf(" ") + 1),
+        })
     }
 
     setDersBilgisi = (item) => {
@@ -133,9 +127,7 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
-        borderRadius: 5,
+        borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
 

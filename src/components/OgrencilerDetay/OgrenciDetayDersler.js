@@ -22,6 +22,16 @@ export default class OgrenciDetayDersler extends Component {
     }
 
     componentDidMount() {
+       var temp = this.state.dersler;
+        temp.sort(function(a, b) {
+            if(a.routes) return -1;
+            if(b.routes) return 1;
+            if(a.dersKodu.toLowerCase() < b.dersKodu.toLowerCase()) return -1;
+            if(a.dersKodu.toLowerCase() > b.dersKodu.toLowerCase()) return 1;
+            return 0;
+        });
+
+        this.setState({dersler: temp});
     }
 
     setDersBilgisi = (item) => {
@@ -47,8 +57,8 @@ export default class OgrenciDetayDersler extends Component {
                                 }}
                                 style={{color: "black" }}
                             >
-                                <Text style = {{marginLeft: 10, fontSize: 30, color: '#B00D23'}}>
-                                    {"<"}
+                                <Text style = {{marginLeft: 10, fontSize: 45, color: '#B00D23'}}>
+                                    {"‹"}
                                 </Text>
                             </TouchableOpacity>
                         </Left>
@@ -56,6 +66,7 @@ export default class OgrenciDetayDersler extends Component {
                         <Text style = {{marginTop: 10, fontSize: 30, fontFamily: "Helvetica-Bold"}}>Dersler</Text>
 
                         <Right>
+                            <Text style = {{marginTop: 10, fontSize: 13, fontFamily: "HelveticaNeue-Thin"}}>{this.state.selectedKisi.ad_soyad}</Text>
                         </Right>
                     </Header>
                 </View>
@@ -101,9 +112,7 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
         paddingHorizontal: 20,
         backgroundColor: '#efebeb',
-        borderWidth: 0.2,
-        borderColor: '#B00D23',
-        borderRadius: 5,
+        borderRadius: 10,
         height: 50,
         width: screen.width * 96.6 / 100,
     },
