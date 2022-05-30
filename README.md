@@ -11,7 +11,7 @@ can see the transportation informations (shuttle hours etc) </br>
 can see the academic calendar </br>
 and so on.. </br>
 
-## Important
+# Important
 
 As mentioned before this app developed for personal purposes, never published in the App Store. </br>
 Used real student informations that scraped from the website of the university.
